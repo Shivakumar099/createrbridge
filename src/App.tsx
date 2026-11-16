@@ -39,6 +39,7 @@ import { CreatorDashboard } from './pages/CreatorDashboard';
 import { ContentCalendarPage } from './pages/ContentCalendarPage';
 import { AIScriptWriterPage } from './pages/AIScriptWriterPage';
 import { CreatorPortfolioPage } from './pages/CreatorPortfolioPage';
+import { CreatorMembershipPage } from './pages/CreatorMembershipPage';
 
 export function App() {
   return (
@@ -55,6 +56,7 @@ export function App() {
             <Route path="/discover-campaigns" element={<DiscoverCampaignsPage />} />
             <Route path="/discover-creators" element={<DiscoverCreatorsPage />} />
             <Route path="/creator-profile/:id" element={<CreatorProfilePage />} />
+            <Route path="/membership" element={<CreatorMembershipPage />} />
 
             {/* ================= PUBLIC-ONLY AUTH ROUTES ================= */}
             <Route
@@ -266,6 +268,14 @@ export function App() {
               element={
                 <ProtectedRoute allowedRoles={['creator']}>
                   <PaymentsPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/creator/membership"
+              element={
+                <ProtectedRoute allowedRoles={['creator']}>
+                  <CreatorMembershipPage />
                 </ProtectedRoute>
               }
             />

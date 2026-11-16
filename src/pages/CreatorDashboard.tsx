@@ -20,7 +20,8 @@ import {
   AlertCircle,
   ExternalLink,
   ChevronRight,
-  Plus
+  Plus,
+  Crown
 } from 'lucide-react';
 import {
   AreaChart,
@@ -118,6 +119,38 @@ export const CreatorDashboard: React.FC = () => {
               <span>AI Script Writer</span>
             </Link>
           </div>
+        </div>
+
+        {/* Creator Membership Banner */}
+        <div className="p-4 sm:p-5 rounded-2xl bg-white border border-[#EAE8F2] shadow-subtle flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-3.5">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#6425E8] to-[#8B5CF6] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+              <Crown className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h4 className="font-bold text-[14px] text-[#17152F]">
+                  CreatorBridge Creator Membership
+                </h4>
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-[#F2ECFF] text-[#6425E8]">
+                  Up to 57% OFF
+                </span>
+              </div>
+              <p className="text-[12px] text-[#77758B] mt-0.5">
+                {user?.membership?.status === 'active'
+                  ? `Active Tier: ${user.membership.planName} • Unlimited applications & AI scripting enabled`
+                  : 'Upgrade to Creator Pro (₹299/mo) or Creator Premium (₹599/mo) for unlimited brand deal pitches.'}
+              </p>
+            </div>
+          </div>
+
+          <Link
+            to="/creator/membership"
+            className="h-9 px-4 rounded-xl bg-[#6425E8] hover:bg-[#521dc7] text-white text-[12px] font-bold inline-flex items-center justify-center gap-1.5 transition-all shadow-xs flex-shrink-0"
+          >
+            <span>{user?.membership?.status === 'active' ? 'Manage Plan' : 'View Plans & Upgrade'}</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
         </div>
 
         {/* 4 Statistics Cards in One Row on Desktop */}

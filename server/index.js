@@ -1957,6 +1957,198 @@ app.post('/api/notifications/mark-all-read', (req, res) => {
   res.json({ success: true });
 });
 
+// --- CreatorBridge Creator Membership ---
+const DEFAULT_MEMBERSHIP_PLANS = [
+  {
+    id: "creator_pro",
+    name: "Creator Pro",
+    original_price: 599,
+    discounted_price: 299,
+    currency: "INR",
+    discount_percentage: 50,
+    features: [
+      "Unlimited campaign applications",
+      "AI Script Writer",
+      "30 AI scripts per month",
+      "Advanced creator portfolio",
+      "Creator analytics",
+      "Application tracking",
+      "Priority support"
+    ]
+  },
+  {
+    id: "creator_premium",
+    name: "Creator Premium",
+    original_price: 1399,
+    discounted_price: 599,
+    currency: "INR",
+    discount_percentage: 57.18,
+    features: [
+      "Everything in Creator Pro",
+      "100 AI scripts per month",
+      "Advanced analytics",
+      "Portfolio insights",
+      "Profile promotion credits",
+      "Priority support",
+      "Exclusive creator resources"
+    ]
+  }
+];
+
+const TAX_PERCENTAGE = 18; // 18% GST
+
+app.get('/api/membership/plans', (req, res) => {
+  const db = readDB();
+  const plans = db.subscriptionPlans || DEFAULT_MEMBERSHIP_PLANS;
+  res.json({
+    feature: "CreatorBridge Creator Membership",
+    taxPercentage: TAX_PERCENTAGE,
+    currency: "INR",
+    subscription_plans: plans,
+    design: {
+      theme: "CreatorBridge purple and lavender",
+      recommended_plan: "creator_premium",
+      premium_plan_highlight: true,
+      show_discount_badges: true,
+      show_original_price: true,
+      show_discounted_price: true
+    }
+  });
+});
+
+// Admin endpoint to update plan pricing
+app.put('/api/membership/plans/:id', (req, res) => {
+  const db = readDB();
+  if (!db.subscriptionPlans) {
+    db.subscriptionPlans = JSON.parse(JSON.stringify(DEFAULT_MEMBERSHIP_PLANS));
+  }
+  const { id } = req.params;
+  const { original_price, discounted_price, discount_percentage, features } = req.body;
+  const planIndex = db.subscriptionPlans.findIndex(p => p.id === id);
+  if (planIndex === -1) {
+    return res.status(404).json({ error: 'Subscription plan not found' });
+  }
+
+  if (original_price !== undefined) db.subscriptionPlans[planIndex].original_price = Number(original_price);
+  if (discounted_price !== undefined) db.subscriptionPlans[planIndex].discounted_price = Number(discounted_price);
+  if (discount_percentage !== undefined) {
+    db.subscriptionPlans[planIndex].discount_percentage = Number(discount_percentage);
+  } else if (original_price && discounted_price) {
+    db.subscriptionPlans[planIndex].discount_percentage = Number((((original_price - discounted_price) / original_price) * 100).toFixed(2));
+  }
+  if (features && Array.isArray(features)) db.subscriptionPlans[planIndex].features = features;
+
+  writeDB(db);
+  res.json({ success: true, plan: db.subscriptionPlans[planIndex] });
+});
+
+// Calculate checkout quote with taxes based on backend prices
+app.post('/api/membership/calculate', (req, res) => {
+  const { planId } = req.body;
+  const db = readDB();
+  const plans = db.subscriptionPlans || DEFAULT_MEMBERSHIP_PLANS;
+  const plan = plans.find(p => p.id === planId);
+  if (!plan) {
+    return res.status(404).json({ error: 'Invalid subscription plan ID' });
+  }
+
+  const basePrice = plan.discounted_price;
+  const taxAmount = Number(((basePrice * TAX_PERCENTAGE) / 100).toFixed(2));
+  const totalAmount = Number((basePrice + taxAmount).toFixed(2));
+
+  res.json({
+    planId: plan.id,
+    planName: plan.name,
+    originalPrice: plan.original_price,
+    basePrice,
+    discountPercentage: plan.discount_percentage,
+    taxPercentage: TAX_PERCENTAGE,
+    taxAmount,
+    totalAmount,
+    currency: plan.currency || 'INR'
+  });
+});
+
+// Process membership checkout & activation
+app.post('/api/membership/subscribe', (req, res) => {
+  const { planId, paymentMethod = 'UPI' } = req.body;
+  const db = readDB();
+  const plans = db.subscriptionPlans || DEFAULT_MEMBERSHIP_PLANS;
+  const plan = plans.find(p => p.id === planId);
+  if (!plan) {
+    return res.status(404).json({ error: 'Invalid subscription plan ID' });
+  }
+
+  const basePrice = plan.discounted_price;
+  const taxAmount = Number(((basePrice * TAX_PERCENTAGE) / 100).toFixed(2));
+  const totalAmount = Number((basePrice + taxAmount).toFixed(2));
+
+  const userId = req.user?.id || db.currentUser?.id || 'usr_creator_default';
+  const now = new Date();
+  const expiryDate = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000); // 30 days validity
+
+  const subscriptionRecord = {
+    planId: plan.id,
+    planName: plan.name,
+    status: 'active',
+    basePrice,
+    taxAmount,
+    totalAmount,
+    currency: plan.currency || 'INR',
+    paymentMethod,
+    subscribedAt: now.toISOString(),
+    expiresAt: expiryDate.toISOString(),
+    invoiceNumber: `INV-MEMB-${Date.now().toString().slice(-6)}`
+  };
+
+  // Update in user record
+  if (db.currentUser && (db.currentUser.id === userId || !req.user)) {
+    db.currentUser.membership = subscriptionRecord;
+  }
+  if (db.users) {
+    const u = db.users.find(user => user.id === userId);
+    if (u) {
+      u.membership = subscriptionRecord;
+    }
+  }
+
+  // Record audit transaction without affecting campaign earnings
+  if (!db.transactions) db.transactions = [];
+  db.transactions.unshift({
+    id: `tx_${Date.now()}`,
+    type: 'membership_subscription',
+    amount: totalAmount,
+    status: 'completed',
+    date: now.toISOString().split('T')[0],
+    campaignId: 'membership',
+    campaignTitle: `CreatorBridge Membership - ${plan.name}`,
+    counterpartyName: 'CreatorBridge Platform',
+    counterpartyRole: 'Platform Services',
+    invoiceNumber: subscriptionRecord.invoiceNumber
+  });
+
+  // Emit in-app notification
+  if (!db.notifications) db.notifications = [];
+  db.notifications.unshift({
+    id: `notif_${Date.now()}`,
+    userId,
+    title: `🎉 ${plan.name} Membership Activated!`,
+    message: `You now have access to ${plan.features[0]}, ${plan.features[1]}, and priority benefits.`,
+    type: 'system',
+    isRead: false,
+    createdAt: now.toISOString(),
+    linkUrl: '/creator/membership'
+  });
+
+  writeDB(db);
+
+  res.json({
+    success: true,
+    message: `Successfully upgraded to ${plan.name}`,
+    subscription: subscriptionRecord
+  });
+});
+
 // Serve frontend dist build if present
 const distPath = path.join(__dirname, '../dist');
 if (fs.existsSync(distPath)) {

@@ -11,6 +11,28 @@ export interface User {
   location: string;
   businessName?: string;
   profileCompleted?: boolean;
+  membership?: {
+    planId: string;
+    planName: string;
+    status: 'active' | 'inactive' | 'expired';
+    basePrice: number;
+    taxAmount: number;
+    totalAmount: number;
+    currency: string;
+    subscribedAt: string;
+    expiresAt: string;
+    invoiceNumber: string;
+  };
+}
+
+export interface SubscriptionPlan {
+  id: string;
+  name: string;
+  original_price: number;
+  discounted_price: number;
+  currency: string;
+  discount_percentage: number;
+  features: string[];
 }
 
 export interface BrandProfile {

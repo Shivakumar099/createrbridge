@@ -17,7 +17,8 @@ import {
   ChevronsUpDown,
   Zap,
   LogOut,
-  Plus
+  Plus,
+  Crown
 } from 'lucide-react';
 
 interface NavItem {
@@ -46,6 +47,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onCreateCampaignClick }) => {
     { label: 'Analytics', path: isBrand ? '/brand/analytics' : '/creator/analytics', icon: BarChart3 },
     { label: 'Automation', path: isBrand ? '/brand/collaborations' : '/creator/collaborations', icon: GitPullRequest },
     { label: 'Content Studio', path: isBrand ? '/creator/ai-script-writer' : '/creator/ai-script-writer', icon: Camera, badge: 3, badgeColor: 'bg-[#FDF2F8] text-[#DB2777]' },
+    { label: 'Membership', path: '/creator/membership', icon: Crown, badge: '50% OFF', badgeColor: 'bg-[#F2ECFF] text-[#6425E8]' },
     { label: 'Documents', path: isBrand ? '/brand/applications' : '/creator/applications', icon: FileText },
     { label: 'Integrations', path: isBrand ? '/brand/profile' : '/creator/portfolio', icon: Layers },
   ];

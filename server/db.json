@@ -1253,5 +1253,41 @@
       "profileCompleted": true,
       "createdAt": "2026-11-11T16:04:43.224Z"
     }
+  ],
+  "subscriptionPlans": [
+    {
+      "id": "creator_pro",
+      "name": "Creator Pro",
+      "original_price": 599,
+      "discounted_price": 299,
+      "currency": "INR",
+      "discount_percentage": 50,
+      "features": [
+        "Unlimited campaign applications",
+        "AI Script Writer",
+        "30 AI scripts per month",
+        "Advanced creator portfolio",
+        "Creator analytics",
+        "Application tracking",
+        "Priority support"
+      ]
+    },
+    {
+      "id": "creator_premium",
+      "name": "Creator Premium",
+      "original_price": 1399,
+      "discounted_price": 599,
+      "currency": "INR",
+      "discount_percentage": 57.18,
+      "features": [
+        "Everything in Creator Pro",
+        "100 AI scripts per month",
+        "Advanced analytics",
+        "Portfolio insights",
+        "Profile promotion credits",
+        "Priority support",
+        "Exclusive creator resources"
+      ]
+    }
   ]
 }
