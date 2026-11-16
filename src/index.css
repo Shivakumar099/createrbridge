@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #6425E8;
+  --color-secondary: #8B5CF6;
+  --color-background: #FAFAFF;
+  --color-light-lavender: #F2ECFF;
+  --color-white: #FFFFFF;
+  --color-primary-text: #17152F;
+  --color-secondary-text: #77758B;
+  --color-border: #EAE8F2;
+
+  --sidebar-width: 240px;
+  --nav-height: 64px;
+  --max-content-width: 1440px;
+  --card-radius: 16px;
+  --card-padding: 22px;
+  --input-height: 46px;
+  --btn-height: 42px;
+  --section-spacing: 28px;
+  --card-gap: 20px;
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #17152F;
+    background-color: #FAFAFF;
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #FAFAFF;
+    color: #17152F;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  /* Typography Classes */
+  .page-heading {
+    @apply text-[30px] font-bold text-[#17152F] leading-tight tracking-tight;
+  }
+  .section-heading {
+    @apply text-[22px] font-semibold text-[#17152F] leading-snug;
+  }
+  .card-heading {
+    @apply text-[16px] font-semibold text-[#17152F] leading-snug;
+  }
+  .body-text {
+    @apply text-[14px] font-normal text-[#77758B] leading-relaxed;
+  }
+  .btn-text {
+    @apply text-[14px] font-semibold;
+  }
+  .form-label {
+    @apply text-[13px] font-medium text-[#17152F] block mb-1.5;
+  }
+  .input-text {
+    @apply text-[14px] font-normal text-[#17152F];
+  }
+  .meta-text {
+    @apply text-[12px] font-normal text-[#77758B];
+  }
+  .financial-figure {
+    @apply text-[30px] font-bold text-[#17152F] tracking-tight leading-none;
+  }
+
+  /* Standard Layout Containers */
+  .layout-container {
+    @apply w-full max-w-[1440px] mx-auto px-4 md:px-6 2xl:px-8;
+  }
+
+  /* Standard Card */
+  .standard-card {
+    @apply bg-white border border-[#EAE8F2] rounded-[16px] p-[22px] shadow-subtle hover:border-[#6425E8]/30 transition-all duration-200;
+  }
+
+  /* Standard Inputs & Controls */
+  .standard-input {
+    @apply h-[46px] text-[14px] px-3.5 rounded-xl border border-[#EAE8F2] bg-white text-[#17152F] placeholder-[#9E9CAF] focus:outline-none focus:border-[#6425E8] focus:ring-2 focus:ring-[#6425E8]/10 transition-all;
+  }
+
+  /* Standard Buttons */
+  .standard-btn {
+    @apply h-[42px] px-4 text-[14px] font-semibold rounded-xl inline-flex items-center justify-center gap-2 transition-all duration-200 select-none cursor-pointer;
+  }
+  .btn-primary {
+    @apply standard-btn bg-[#6425E8] text-white hover:bg-[#521dc7] shadow-sm hover:shadow-md shadow-[#6425E8]/20;
+  }
+  .btn-secondary {
+    @apply standard-btn bg-[#F2ECFF] text-[#6425E8] hover:bg-[#6425E8] hover:text-white;
+  }
+  .btn-outline {
+    @apply standard-btn border border-[#EAE8F2] bg-white text-[#17152F] hover:border-[#6425E8] hover:text-[#6425E8];
+  }
+  .btn-ghost {
+    @apply standard-btn bg-transparent text-[#77758B] hover:text-[#17152F] hover:bg-[#F2ECFF]/40;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #EAE8F2;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9E9CAF;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}

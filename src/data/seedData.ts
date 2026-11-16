@@ -1,0 +1,1316 @@
+import {
+  User,
+  BrandProfile,
+  CreatorProfile,
+  Campaign,
+  Application,
+  Collaboration,
+  CalendarTask,
+  ChatMessage,
+  Conversation,
+  Transaction,
+  AppNotification
+} from '../types';
+
+export const CURRENT_BRAND_USER: User = {
+  id: 'user_brand_1',
+  name: 'Vikram Sethi',
+  email: 'partnerships@boat-lifestyle.com',
+  phone: '+91 98201 44512',
+  role: 'brand',
+  avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
+  location: 'Bengaluru, Karnataka',
+  businessName: 'boAt Lifestyle',
+  createdAt: '2024-01-15'
+};
+
+export const CURRENT_CREATOR_USER: User = {
+  id: 'user_creator_1',
+  name: 'Tanya Sharma',
+  email: 'tanya@tanyastyle.com',
+  phone: '+91 99104 22319',
+  role: 'creator',
+  avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80',
+  location: 'Mumbai, Maharashtra',
+  createdAt: '2024-02-10'
+};
+
+export const BRAND_PROFILES: BrandProfile[] = [
+  {
+    id: 'brand_boat',
+    businessName: 'boAt Lifestyle',
+    ownerName: 'Aman Gupta & Team',
+    email: 'partnerships@boat-lifestyle.com',
+    phone: '+91 98201 44512',
+    category: 'Technology & Audio',
+    location: 'Bengaluru, Karnataka',
+    logo: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=120&q=80',
+    website: 'https://www.boat-lifestyle.com',
+    description: "India's leading consumer tech brand delivering premium wireless audio, ANC earphones, and trendy smartwatches.",
+    verified: true,
+    totalSpend: 1420000,
+    activeCampaignsCount: 4
+  },
+  {
+    id: 'brand_nykaa',
+    businessName: 'Nykaa Beauty',
+    ownerName: 'Falguni Nayar & Partnerships',
+    email: 'collabs@nykaa.com',
+    phone: '+91 98110 33201',
+    category: 'Beauty & Skincare',
+    location: 'Mumbai, Maharashtra',
+    logo: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=120&q=80',
+    website: 'https://www.nykaa.com',
+    description: "India's premier omnichannel beauty and personal care destination empowering beauty creators.",
+    verified: true,
+    totalSpend: 2850000,
+    activeCampaignsCount: 6
+  },
+  {
+    id: 'brand_zomato',
+    businessName: 'Zomato India',
+    ownerName: 'Deepinder Goyal & Growth Team',
+    email: 'creator-partnerships@zomato.com',
+    phone: '+91 97112 55431',
+    category: 'Food & Dining',
+    location: 'Gurugram, Haryana',
+    logo: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=120&q=80',
+    website: 'https://www.zomato.com',
+    description: 'Connecting foodies with the best dining and fastest delivery experiences across 500+ Indian cities.',
+    verified: true,
+    totalSpend: 4200000,
+    activeCampaignsCount: 8
+  },
+  {
+    id: 'brand_cultfit',
+    businessName: 'Cult.fit',
+    ownerName: 'Mukesh Bansal & Team',
+    email: 'influencers@cult.fit',
+    phone: '+91 98801 12399',
+    category: 'Fitness & Wellness',
+    location: 'Bengaluru, Karnataka',
+    logo: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=120&q=80',
+    website: 'https://www.cult.fit',
+    description: 'Transforming fitness through engaging group workouts, holistic nutrition, and athletic gear.',
+    verified: true,
+    totalSpend: 1950000,
+    activeCampaignsCount: 3
+  }
+];
+
+
+export const REFERENCE_DISCOVER_CREATORS: CreatorProfile[] = [
+  {
+    id: 'creator_sneha',
+    fullName: 'Sneha Verma',
+    email: 'sneha@vermastyle.com',
+    phone: '+91 98450 12091',
+    instagramHandle: '@snehaverma',
+    categories: ['Food & Beverage', 'Lifestyle'],
+    location: 'Bengaluru, KA',
+    profilePhoto: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
+    bio: 'Food explorer & aesthetic lifestyle creator showcasing top Bengaluru cafes and culinary recipes.',
+    followersCount: 124000,
+    avgViews: 48000,
+    engagementRate: 8.2,
+    rating: 4.9,
+    reviewCount: 42,
+    verified: true,
+    pricing: { reel: 25000, story: 10000, post: 18000, video: 50000 },
+    profileCompletionPct: 100,
+    portfolio: []
+  },
+  {
+    id: 'creator_rohan_shetty',
+    fullName: 'Rohan Shetty',
+    email: 'rohan@shettyfood.in',
+    phone: '+91 98451 99201',
+    instagramHandle: '@rohanshetty',
+    categories: ['Food & Beverage', 'Travel'],
+    location: 'Bengaluru, KA',
+    profilePhoto: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80',
+    bio: 'Culinary traveller & street food curator. Highlighting authentic regional flavours, hidden kitchen gems, and culinary journeys.',
+    followersCount: 86000,
+    avgViews: 32000,
+    engagementRate: 7.5,
+    rating: 4.85,
+    reviewCount: 31,
+    verified: true,
+    pricing: { reel: 18000, story: 8000, post: 14000, video: 38000 },
+    profileCompletionPct: 95,
+    portfolio: []
+  },
+  {
+    id: 'creator_ananya_joshi',
+    fullName: 'Ananya Joshi',
+    email: 'ananya@joshilife.in',
+    phone: '+91 98200 77142',
+    instagramHandle: '@ananyajoshi',
+    categories: ['Lifestyle', 'Reviews'],
+    location: 'Mumbai, MH',
+    profilePhoto: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80',
+    bio: 'Authentic brand product reviews, Mumbai lifestyle, and minimalist everyday routines.',
+    followersCount: 210000,
+    avgViews: 75000,
+    engagementRate: 9.1,
+    rating: 4.95,
+    reviewCount: 56,
+    verified: true,
+    pricing: { reel: 38000, story: 15000, post: 25000, video: 75000 },
+    profileCompletionPct: 100,
+    portfolio: []
+  },
+  {
+    id: 'creator_karthik_rao',
+    fullName: 'Karthik Rao',
+    email: 'karthik@raovlogs.com',
+    phone: '+91 98452 44109',
+    instagramHandle: '@karthikrao',
+    categories: ['Travel', 'Vlogs'],
+    location: 'Mysuru, KA',
+    profilePhoto: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80',
+    bio: 'Cinematic visual storyteller & road-tripper exploring Southern India landscapes and coastal routes.',
+    followersCount: 155000,
+    avgViews: 62000,
+    engagementRate: 8.7,
+    rating: 4.9,
+    reviewCount: 39,
+    verified: true,
+    pricing: { reel: 30000, story: 12000, post: 20000, video: 65000 },
+    profileCompletionPct: 95,
+    portfolio: []
+  },
+  {
+    id: 'creator_pooja_nair',
+    fullName: 'Pooja Nair',
+    email: 'pooja@poojanair.in',
+    phone: '+91 98453 88102',
+    instagramHandle: '@poojanair',
+    categories: ['Beauty', 'Lifestyle'],
+    location: 'Bengaluru, KA',
+    profilePhoto: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80',
+    bio: 'Clean botanical skincare routines, hair care transformations, and wellness routines.',
+    followersCount: 178000,
+    avgViews: 68000,
+    engagementRate: 9.5,
+    rating: 4.92,
+    reviewCount: 47,
+    verified: true,
+    pricing: { reel: 32000, story: 14000, post: 22000, video: 70000 },
+    profileCompletionPct: 100,
+    portfolio: []
+  },
+  {
+    id: 'creator_vikram_prasad',
+    fullName: 'Vikram Prasad',
+    email: 'vikram@prasadtech.in',
+    phone: '+91 98454 11394',
+    instagramHandle: '@vikramprasad',
+    categories: ['Tech', 'Reviews'],
+    location: 'Bengaluru, KA',
+    profilePhoto: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80',
+    bio: 'Consumer electronics deep-dives, audio gadgets, and creator setup recommendations.',
+    followersCount: 92000,
+    avgViews: 40000,
+    engagementRate: 7.9,
+    rating: 4.88,
+    reviewCount: 33,
+    verified: true,
+    pricing: { reel: 22000, story: 9000, post: 16000, video: 48000 },
+    profileCompletionPct: 92,
+    portfolio: []
+  },
+  {
+    id: 'creator_megha_kulkarni',
+    fullName: 'Megha Kulkarni',
+    email: 'megha@coorgadventures.in',
+    phone: '+91 98455 66723',
+    instagramHandle: '@meghakulkarni',
+    categories: ['Travel', 'Adventure'],
+    location: 'Coorg, KA',
+    profilePhoto: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80',
+    bio: 'Offbeat coffee estate trails, trekking guides, and eco-travel experiences in South India.',
+    followersCount: 134000,
+    avgViews: 59000,
+    engagementRate: 8.8,
+    rating: 4.9,
+    reviewCount: 36,
+    verified: true,
+    pricing: { reel: 26000, story: 11000, post: 18000, video: 55000 },
+    profileCompletionPct: 96,
+    portfolio: []
+  },
+  {
+    id: 'creator_arjun_gowda',
+    fullName: 'Arjun Gowda',
+    email: 'arjun@gowdafit.in',
+    phone: '+91 98456 22819',
+    instagramHandle: '@arjungowda',
+    categories: ['Fitness', 'Lifestyle'],
+    location: 'Bengaluru, KA',
+    profilePhoto: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80',
+    bio: 'Functional strength training, healthy nutrition protocols, and active lifestyle motivation.',
+    followersCount: 110000,
+    avgViews: 46000,
+    engagementRate: 8.4,
+    rating: 4.89,
+    reviewCount: 28,
+    verified: true,
+    pricing: { reel: 24000, story: 10000, post: 16000, video: 50000 },
+    profileCompletionPct: 94,
+    portfolio: []
+  }
+];
+
+export const CREATOR_PROFILES: CreatorProfile[] = [
+  ...REFERENCE_DISCOVER_CREATORS,
+  {
+    id: 'user_creator_1',
+    fullName: 'Tanya Sharma',
+    email: 'tanya@tanyastyle.com',
+    phone: '+91 99104 22319',
+    instagramHandle: '@tanyasharma.style',
+    youtubeHandle: 'TanyaSharmaVlogs',
+    categories: ['Fashion', 'Lifestyle', 'Beauty'],
+    location: 'Mumbai, Maharashtra',
+    profilePhoto: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=500&q=80',
+    bio: 'Fashion stylist & aesthetic lifestyle creator. Passionate about mindful everyday fashion, street looks & beauty routines.',
+    followersCount: 485000,
+    youtubeSubscribers: 125000,
+    avgViews: 142000,
+    engagementRate: 5.4,
+    rating: 4.9,
+    reviewCount: 38,
+    verified: true,
+    pricing: {
+      reel: 45000,
+      story: 18000,
+      post: 30000,
+      video: 85000
+    },
+    profileCompletionPct: 95,
+    missingProfileItems: ['Add Rate Card for Bundled Reels'],
+    portfolio: [
+      {
+        id: 'port_1',
+        title: 'Minimalist Festive Lookbook',
+        type: 'Reel',
+        thumbnail: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80',
+        url: 'https://instagram.com/reel/1',
+        views: '412K',
+        likes: '34.2K',
+        brandName: 'Nykaa Fashion'
+      },
+      {
+        id: 'port_2',
+        title: '7 Everyday Streetwear Outfits',
+        type: 'Video',
+        thumbnail: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80',
+        url: 'https://youtube.com/watch?v=1',
+        views: '280K',
+        likes: '22.1K',
+        brandName: 'H&M India'
+      },
+      {
+        id: 'port_3',
+        title: 'Glow Morning Skincare Routine',
+        type: 'Reel',
+        thumbnail: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80',
+        url: 'https://instagram.com/reel/2',
+        views: '350K',
+        likes: '28.9K',
+        brandName: 'The Minimalist'
+      }
+    ]
+  },
+  {
+    id: 'user_creator_2',
+    fullName: 'Rohan Kulkarni',
+    email: 'rohan@techrohan.in',
+    phone: '+91 97312 88410',
+    instagramHandle: '@rohangadgets',
+    youtubeHandle: 'TechWithRohan',
+    categories: ['Technology', 'Gaming'],
+    location: 'Bengaluru, Karnataka',
+    profilePhoto: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80',
+    bio: 'Tech reviewer breaking down gadgets with brutal honesty, crisp visuals, and benchmarking tests.',
+    followersCount: 820000,
+    youtubeSubscribers: 610000,
+    avgViews: 380000,
+    engagementRate: 6.8,
+    rating: 4.95,
+    reviewCount: 52,
+    verified: true,
+    pricing: {
+      reel: 65000,
+      story: 25000,
+      post: 40000,
+      video: 140000
+    },
+    profileCompletionPct: 100,
+    portfolio: [
+      {
+        id: 'port_4',
+        title: 'Noise Cancelling Earbuds Shootout',
+        type: 'Video',
+        thumbnail: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80',
+        url: 'https://youtube.com/watch?v=2',
+        views: '690K',
+        likes: '48K',
+        brandName: 'boAt Lifestyle'
+      },
+      {
+        id: 'port_5',
+        title: 'Top 5 Creator Desk Setups',
+        type: 'Reel',
+        thumbnail: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=600&q=80',
+        url: 'https://instagram.com/reel/3',
+        views: '520K',
+        likes: '41K',
+        brandName: 'Logitech India'
+      }
+    ]
+  },
+  {
+    id: 'user_creator_3',
+    fullName: 'Priya Sundaram',
+    email: 'priya@chennaibites.com',
+    phone: '+91 98400 66721',
+    instagramHandle: '@priyabites',
+    youtubeHandle: 'SouthIndianKitchenByPriya',
+    categories: ['Food & Beverage', 'Lifestyle'],
+    location: 'Chennai, Tamil Nadu',
+    profilePhoto: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80',
+    bio: 'Culinary explorer & food creator celebrating traditional South Indian flavours and modern cloud kitchen discoveries.',
+    followersCount: 340000,
+    youtubeSubscribers: 180000,
+    avgViews: 110000,
+    engagementRate: 6.1,
+    rating: 4.85,
+    reviewCount: 29,
+    verified: true,
+    pricing: {
+      reel: 35000,
+      story: 15000,
+      post: 22000,
+      video: 60000
+    },
+    profileCompletionPct: 90,
+    portfolio: [
+      {
+        id: 'port_6',
+        title: 'Weekend Biryani Hunt: Secret Spot',
+        type: 'Reel',
+        thumbnail: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80',
+        url: 'https://instagram.com/reel/4',
+        views: '540K',
+        likes: '39K',
+        brandName: 'Zomato Gold'
+      }
+    ]
+  },
+  {
+    id: 'user_creator_4',
+    fullName: 'Arjun Nair',
+    email: 'arjun@cultfitness.in',
+    phone: '+91 98950 11200',
+    instagramHandle: '@arjun.calisthenics',
+    youtubeHandle: 'ArjunNairFitness',
+    categories: ['Fitness', 'Lifestyle'],
+    location: 'Hyderabad, Telangana',
+    profilePhoto: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80',
+    bio: 'Calisthenics coach, marathon runner, and everyday wellness advocate. Helping you build functional strength anywhere.',
+    followersCount: 620000,
+    youtubeSubscribers: 290000,
+    avgViews: 230000,
+    engagementRate: 7.2,
+    rating: 4.9,
+    reviewCount: 44,
+    verified: true,
+    pricing: {
+      reel: 50000,
+      story: 20000,
+      post: 35000,
+      video: 95000
+    },
+    profileCompletionPct: 95,
+    portfolio: [
+      {
+        id: 'port_7',
+        title: '30-Day Pull-Up Progression',
+        type: 'Reel',
+        thumbnail: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80',
+        url: 'https://instagram.com/reel/5',
+        views: '890K',
+        likes: '62K',
+        brandName: 'Cult.fit'
+      }
+    ]
+  },
+  {
+    id: 'user_creator_5',
+    fullName: 'Ananya Roy',
+    email: 'ananya@roamingbengal.com',
+    phone: '+91 98301 77211',
+    instagramHandle: '@ananyatravels',
+    youtubeHandle: 'AnanyaTravelTales',
+    categories: ['Travel', 'Lifestyle'],
+    location: 'Kolkata, West Bengal',
+    profilePhoto: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=500&q=80',
+    bio: 'Documenting offbeat Himalayan trails, heritage homestays, and culinary journeys with cinematic drone visuals.',
+    followersCount: 295000,
+    youtubeSubscribers: 140000,
+    avgViews: 95000,
+    engagementRate: 5.9,
+    rating: 4.88,
+    reviewCount: 26,
+    verified: true,
+    pricing: {
+      reel: 38000,
+      story: 16000,
+      post: 25000,
+      video: 75000
+    },
+    profileCompletionPct: 88,
+    portfolio: []
+  },
+  {
+    id: 'user_creator_6',
+    fullName: 'Vikram Malhotra',
+    email: 'vikram@autoenthusiast.in',
+    phone: '+91 98230 45678',
+    instagramHandle: '@vikram_drives',
+    youtubeHandle: 'DriveWithVikram',
+    categories: ['Technology', 'Travel'],
+    location: 'Pune, Maharashtra',
+    profilePhoto: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=80',
+    bio: 'Automotive and EV enthusiast exploring the future of electric mobility and long-range road trips in India.',
+    followersCount: 410000,
+    youtubeSubscribers: 220000,
+    avgViews: 170000,
+    engagementRate: 6.4,
+    rating: 4.92,
+    reviewCount: 31,
+    verified: true,
+    pricing: {
+      reel: 48000,
+      story: 18000,
+      post: 32000,
+      video: 110000
+    },
+    profileCompletionPct: 92,
+    portfolio: []
+  }
+];
+
+export const CAMPAIGNS: Campaign[] = [
+  {
+    id: 'camp_freshhydro',
+    brandId: 'brand_freshhydro',
+    brandName: 'FreshHydro',
+    brandLogo: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=120&q=80',
+    title: 'Promote Our Water Bottle',
+    product: 'FreshHydro Insulated Glass Flask',
+    description: 'Create aesthetic daily hydration reels showing temperature retention and sleek minimalist design on desk setups.',
+    category: 'Lifestyle',
+    location: 'Bengaluru',
+    budget: 150000,
+    creatorPayment: 15000,
+    deliverables: { reels: 1, stories: 2 },
+    deadline: '2026-11-18',
+    startDate: '2026-11-11',
+    endDate: '2026-11-25',
+    platforms: ['Instagram'],
+    audienceRequirements: {
+      minFollowers: 25000,
+      creatorCategory: 'Lifestyle / Fitness',
+      audienceType: 'Eco-conscious working professionals',
+      location: 'Bengaluru'
+    },
+    brief: {
+      objective: 'Promote daily healthy hydration with sustainable insulated glass bottle.',
+      targetAudience: 'Urban desk workers & students',
+      keyMessage: 'Pure hydration, zero plastic.',
+      productBenefits: ['Borosilicate Glass', '24h Cold Retention', 'Leakproof silicone grip'],
+      specialOffers: 'Use code FRESH10 for 10% off',
+      requiredCTA: 'Tap the link to get your FreshHydro flask with 10% off!',
+      brandGuidelines: 'Bright natural lighting, clean aesthetic desk shots.',
+      contentRestrictions: 'No plastic comparisons.'
+    },
+    status: 'active',
+    bannerImage: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=600&q=80',
+    applicantsCount: 18,
+    selectedCreatorsCount: 4,
+    createdAt: '2026-11-10'
+  },
+  {
+    id: 'camp_urbanbites',
+    brandId: 'brand_urbanbites',
+    brandName: 'Urban Bites',
+    brandLogo: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=120&q=80',
+    title: 'Create Reels on Our Cafe',
+    product: 'Urban Bites Signature Gourmet Bowls',
+    description: 'Visit our flagship cafe in Bandra, sample our signature bowl menu, and shoot a mouth-watering cinematic reel.',
+    category: 'Food & Beverage',
+    location: 'Mumbai',
+    budget: 250000,
+    creatorPayment: 25000,
+    deliverables: { reels: 1, stories: 3 },
+    deadline: '2026-11-21',
+    startDate: '2026-11-11',
+    endDate: '2026-11-28',
+    platforms: ['Instagram'],
+    audienceRequirements: {
+      minFollowers: 30000,
+      creatorCategory: 'Food & Dining / City Guides',
+      audienceType: 'Mumbai foodies & brunch lovers',
+      location: 'Mumbai'
+    },
+    brief: {
+      objective: 'Showcase authentic flavors and vibrant ambiance of Urban Bites Cafe.',
+      targetAudience: 'Foodies and cafe hoppers in Mumbai',
+      keyMessage: 'Your new favorite cozy brunch spot in Bandra.',
+      productBenefits: ['Fresh farm-to-table organic ingredients', 'Artisanal coffee', 'Aesthetic greenery decor'],
+      specialOffers: 'Show reel for free dessert on orders above ₹500',
+      requiredCTA: 'Visit Urban Bites Bandra this weekend and show this reel for free dessert!',
+      brandGuidelines: 'Rich macro food shots, natural ambient cafe music.',
+      contentRestrictions: 'Ensure food hygiene standards.'
+    },
+    status: 'active',
+    bannerImage: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80',
+    applicantsCount: 32,
+    selectedCreatorsCount: 5,
+    createdAt: '2026-11-10'
+  },
+  {
+    id: 'camp_glowskin',
+    brandId: 'brand_glowskin',
+    brandName: 'GlowSkin',
+    brandLogo: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=120&q=80',
+    title: 'Showcase Our Skincare Range',
+    product: 'GlowSkin Vitamin C & Peptide Serum',
+    description: 'Demonstrate your morning glow skincare routine featuring GlowSkin brightening serum with natural skin texture.',
+    category: 'Beauty',
+    location: 'Delhi',
+    budget: 200000,
+    creatorPayment: 20000,
+    deliverables: { reels: 1, stories: 2 },
+    deadline: '2026-11-19',
+    startDate: '2026-11-11',
+    endDate: '2026-11-26',
+    platforms: ['Instagram'],
+    audienceRequirements: {
+      minFollowers: 25000,
+      creatorCategory: 'Beauty & Skincare',
+      audienceType: 'Clean skincare and beauty enthusiasts',
+      location: 'Delhi-NCR / India'
+    },
+    brief: {
+      objective: 'Demonstrate dewy hydration and healthy morning skin routine with GlowSkin serum.',
+      targetAudience: 'Skincare conscious women and men 18-35',
+      keyMessage: 'Feed your skin clean botanical nourishment.',
+      productBenefits: ['10% Stable Vitamin C', 'Centella & Hyaluronic Acid', 'Non-sticky fast absorption'],
+      specialOffers: '15% off first order with code GLOW15',
+      requiredCTA: 'Tap the link in bio to try GlowSkin with 15% off using GLOW15!',
+      brandGuidelines: 'Macro skin application, natural lighting, unfiltered real skin.',
+      contentRestrictions: 'No medical cure claims.'
+    },
+    status: 'active',
+    bannerImage: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80',
+    applicantsCount: 24,
+    selectedCreatorsCount: 4,
+    createdAt: '2026-11-10'
+  },
+  {
+    id: 'camp_boat_nirvana',
+    brandId: 'brand_boat',
+    brandName: 'boAt Lifestyle',
+    brandLogo: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=120&q=80',
+    title: 'Nirvana Ion ANC: Silence The Noise in Indian Commutes',
+    product: 'boAt Nirvana Ion ANC Earbuds',
+    description: 'Showcase how boAt Nirvana Ion ANC blocks chaotic metro, traffic, and coffee shop noise with crystal-clear spatial audio.',
+    category: 'Technology',
+    location: 'Pan-India',
+    budget: 650000,
+    creatorPayment: 50000,
+    deliverables: {
+      reels: 1,
+      stories: 2
+    },
+    deadline: '2026-11-28',
+    startDate: '2026-11-15',
+    endDate: '2026-12-10',
+    platforms: ['Instagram', 'YouTube Shorts'],
+    audienceRequirements: {
+      minFollowers: 75000,
+      creatorCategory: 'Technology / Lifestyle / Travel',
+      audienceType: 'Youth & Young Professionals (18-35)',
+      location: 'Metro & Tier-1 Indian Cities'
+    },
+    brief: {
+      objective: 'Demonstrate real-world Active Noise Cancellation (32dB Hybrid ANC) and 120-hour massive playback in everyday Indian hustle.',
+      targetAudience: 'College students, daily metro commuters, tech enthusiasts and remote cafe workers looking for premium audio under ₹3,000.',
+      keyMessage: 'No matter how chaotic India gets, your vibe stays untouched with boAt Nirvana Ion ANC.',
+      productBenefits: [
+        '32dB Hybrid Active Noise Cancellation',
+        '120 Hours Total Playback with Beast Mode 60ms low latency',
+        'Dual EQ Modes (boAt Signature Sound + Balanced)',
+        'Quad Mics with ENx Technology for crisp phone calls'
+      ],
+      specialOffers: 'Use code CREATORBOAT for flat 10% instant off on boat-lifestyle.com',
+      requiredCTA: 'Tap the link in bio / story sticker to grab your Nirvana Ion ANC with extra 10% off using code CREATORBOAT.',
+      brandGuidelines: 'Show the physical tap-to-ANC gesture in real noisy environments (train, street market, bustling office). High energy, upbeat soundtrack.',
+      contentRestrictions: 'Do not disparage rival brands by name. Avoid unsafe recording while actively driving motorized vehicles.'
+    },
+    status: 'active',
+    featured: true,
+    trending: true,
+    bannerImage: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=80',
+    applicantsCount: 28,
+    selectedCreatorsCount: 8,
+    createdAt: '2026-11-01'
+  },
+  {
+    id: 'camp_nykaa_glow',
+    brandId: 'brand_nykaa',
+    brandName: 'Nykaa Beauty',
+    brandLogo: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=120&q=80',
+    title: 'Festive Glass Skin: Serum Infused Foundation Launch',
+    product: 'Nykaa SkinShield Hydrating Foundation & Dewy Primer',
+    description: 'Create an authentic 60-second "Get Ready With Me" showing real skin texture transformation with 24-hr dewy hydration.',
+    category: 'Beauty',
+    location: 'Mumbai, Delhi, Bengaluru',
+    budget: 450000,
+    creatorPayment: 45000,
+    deliverables: {
+      reels: 1,
+      stories: 3
+    },
+    deadline: '2026-11-25',
+    startDate: '2026-11-12',
+    endDate: '2026-12-05',
+    platforms: ['Instagram'],
+    audienceRequirements: {
+      minFollowers: 50000,
+      creatorCategory: 'Beauty & Skincare / Fashion',
+      audienceType: 'Women 18-35 interested in clean makeup & skincare',
+      location: 'India'
+    },
+    brief: {
+      objective: 'Establish Nykaa SkinShield as the go-to lightweight foundation for Indian skin tones that hydrates all day.',
+      targetAudience: 'Beauty enthusiasts, working women, wedding & festive season party-goers.',
+      keyMessage: 'Your skin, but glowing from within. Never cakey, always breathable.',
+      productBenefits: [
+        'Infused with 2% Niacinamide and Hyaluronic Acid',
+        '24 true-match shades formulated specifically for warm & neutral Indian undertones',
+        'SPF 30 PA+++ sun protection built in'
+      ],
+      specialOffers: 'Buy 1 Get Nykaa Lip Glaze Free on orders above ₹999 during the launch week.',
+      requiredCTA: 'Find your exact shade match on the Nykaa app and use code NYKAAGLOW for a free gift!',
+      brandGuidelines: 'Use natural daylight or soft ring light. Close-up skin shots without heavy smoothing filters are mandatory to show authentic finish.',
+      contentRestrictions: 'No misleading heavy blurring filters or claiming medical skin cure.'
+    },
+    status: 'active',
+    featured: true,
+    isNew: true,
+    bannerImage: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80',
+    applicantsCount: 42,
+    selectedCreatorsCount: 6,
+    createdAt: '2026-11-05'
+  },
+  {
+    id: 'camp_zomato_gold',
+    brandId: 'brand_zomato',
+    brandName: 'Zomato India',
+    brandLogo: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=120&q=80',
+    title: 'Secret Food Trails: Unlock 40% Off with Zomato Gold',
+    product: 'Zomato Gold Dining Experience',
+    description: 'Take your followers to an aesthetic culinary cafe or iconic local eatery and demonstrate instant 40% dining discounts with Gold.',
+    category: 'Food & Beverage',
+    location: 'Bengaluru, Delhi-NCR, Mumbai, Hyderabad',
+    budget: 720000,
+    creatorPayment: 35000,
+    deliverables: {
+      reels: 1,
+      stories: 2
+    },
+    deadline: '2026-12-01',
+    startDate: '2026-11-14',
+    endDate: '2026-12-15',
+    platforms: ['Instagram', 'YouTube Shorts'],
+    audienceRequirements: {
+      minFollowers: 40000,
+      creatorCategory: 'Food & Dining / Travel / City Guides',
+      audienceType: 'Foodies, couples, cafe hoppers aged 20-38',
+      location: 'Top 8 Metro Cities'
+    },
+    brief: {
+      objective: 'Drive dining-out footfall and new Zomato Gold 3-month subscriptions by highlighting authentic restaurant experiences.',
+      targetAudience: 'Urban food lovers who dine out 2+ times per week.',
+      keyMessage: 'Why pay full bill when Zomato Gold cuts 40% off the total check at your favourite culinary spots?',
+      productBenefits: [
+        'Flat 40% off the total dining bill at partner cafes and fine-dines',
+        'Free food delivery on all orders over ₹199',
+        'VIP priority delivery during peak monsoon & weekend rush'
+      ],
+      specialOffers: 'Get 3 Months of Zomato Gold for just ₹49 using the creator promo code.',
+      requiredCTA: 'Tap the link in bio to join Zomato Gold for just ₹49 and save big this weekend!',
+      brandGuidelines: 'High-definition macro food shots (cheese pulls, sizzlers, pour-overs). Show the actual mobile payment scan screen.',
+      contentRestrictions: 'Ensure food hygiene standards in visuals; no food wastage.'
+    },
+    status: 'active',
+    trending: true,
+    bannerImage: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80',
+    applicantsCount: 65,
+    selectedCreatorsCount: 12,
+    createdAt: '2026-11-03'
+  },
+  {
+    id: 'camp_cultfit_challenge',
+    brandId: 'brand_cultfit',
+    brandName: 'Cult.fit',
+    brandLogo: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=120&q=80',
+    title: 'Transform in 20 Mins: CultPass Home & Center Challenge',
+    product: 'CultPass All-Access Gym & Home Workout',
+    description: 'Share a high-energy routine or gym session demonstrating that fitness can be fun, community-driven, and accessible to anyone.',
+    category: 'Fitness',
+    location: 'Bengaluru, Hyderabad, Pune, Mumbai, Delhi',
+    budget: 520000,
+    creatorPayment: 40000,
+    deliverables: {
+      reels: 1,
+      stories: 2
+    },
+    deadline: '2026-12-05',
+    startDate: '2026-11-18',
+    endDate: '2026-12-20',
+    platforms: ['Instagram', 'YouTube Shorts'],
+    audienceRequirements: {
+      minFollowers: 60000,
+      creatorCategory: 'Fitness / Health / Wellness / Sports',
+      audienceType: 'Active individuals seeking functional health',
+      location: 'India'
+    },
+    brief: {
+      objective: 'Inspire creators followers to kickstart their fitness resolution early before New Year rush with CultPass.',
+      targetAudience: 'Working corporate professionals and beginners intimidated by traditional bodybuilder gyms.',
+      keyMessage: 'Workout that feels like a party with world-class trainers and zero judgment.',
+      productBenefits: [
+        'Access to 600+ Cult centers across India (Boxing, HRX, Yoga, Strength)',
+        'Unlimited at-home guided workouts with celebrity trainers',
+        'Free body composition analysis and customized nutrition guidance'
+      ],
+      specialOffers: '2 Free Trial Classes + 15% off annual CultPass with code CULTCREATOR.',
+      requiredCTA: 'Book your 2 FREE trial classes via the link in my story sticker!',
+      brandGuidelines: 'High tempo, motivational tone, upbeat music, clean workout attire.',
+      contentRestrictions: 'No promotion of unverified dietary supplements or extreme starvation diets.'
+    },
+    status: 'active',
+    bannerImage: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80',
+    applicantsCount: 31,
+    selectedCreatorsCount: 5,
+    createdAt: '2026-11-08'
+  },
+  {
+    id: 'camp_minimalist_sunscreen',
+    brandId: 'brand_nykaa',
+    brandName: 'The Minimalist',
+    brandLogo: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=120&q=80',
+    title: 'Invisible Sunscreen SPF 50: Zero White Cast Challenge',
+    product: 'Minimalist Invisible Sunscreen Fluid SPF 50 PA++++',
+    description: 'Demonstrate application on camera to prove zero white cast, fast absorption, and matte velvet feel under Indian humidity.',
+    category: 'Beauty',
+    location: 'Pan-India',
+    budget: 380000,
+    creatorPayment: 38000,
+    deliverables: {
+      reels: 1,
+      stories: 2
+    },
+    deadline: '2026-12-10',
+    startDate: '2026-11-20',
+    endDate: '2026-12-25',
+    platforms: ['Instagram'],
+    audienceRequirements: {
+      minFollowers: 45000,
+      creatorCategory: 'Skincare / Dermatological / Daily Routine',
+      audienceType: 'Skincare conscious consumers',
+      location: 'India'
+    },
+    brief: {
+      objective: 'Demystify sunscreen usage by showing a completely transparent, lightweight sun fluid with zero ghost finish.',
+      targetAudience: 'Anyone tired of oily, greasy sunscreens that leave a sticky white layer.',
+      keyMessage: 'Science-backed sun protection that disappears into your skin in 10 seconds.',
+      productBenefits: [
+        'Broad spectrum SPF 50 with European UV filters',
+        'Completely invisible, zero white cast on all skin tones',
+        'Sweat and water resistant for 80 minutes'
+      ],
+      specialOffers: '15% discount on first purchase on baminimalist.co with code GLOWMINIMAL.',
+      requiredCTA: 'Level up your daily sun defense—tap the link in my bio to get yours!',
+      brandGuidelines: 'Informative, educational tone. Show actual UV camera shot or 2-finger measurement application on camera.',
+      contentRestrictions: 'Do not make false claims that sunscreen prevents all skin aging.'
+    },
+    status: 'active',
+    bannerImage: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1200&q=80',
+    applicantsCount: 19,
+    selectedCreatorsCount: 4,
+    createdAt: '2026-11-09'
+  },
+  {
+    id: 'camp_ather_ev',
+    brandId: 'brand_boat',
+    brandName: 'Ather Energy',
+    brandLogo: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=120&q=80',
+    title: 'Warp Mode Week: Pure Thrill of Electric Mobility',
+    product: 'Ather 450 Apex Smart Electric Scooter',
+    description: 'Experience instant torque, Google Maps integration, and rapid charging on a weekend city sprint with Ather 450 Apex.',
+    category: 'Technology',
+    location: 'Bengaluru, Chennai, Pune, Delhi',
+    budget: 850000,
+    creatorPayment: 60000,
+    deliverables: {
+      reels: 1,
+      youtubeVideos: 1
+    },
+    deadline: '2026-12-15',
+    startDate: '2026-11-25',
+    endDate: '2026-12-30',
+    platforms: ['Instagram', 'YouTube'],
+    audienceRequirements: {
+      minFollowers: 80000,
+      creatorCategory: 'Automobile / Tech / Urban Lifestyle',
+      audienceType: 'Tech-forward commuters and urban explorers',
+      location: 'South & West India'
+    },
+    brief: {
+      objective: 'Highlight the thrill, connected intelligence, and cost savings of India’s quickest electric scooter.',
+      targetAudience: 'Early tech adopters, college grads, and daily commuters looking for smart personal mobility.',
+      keyMessage: 'Why commute in traffic when you can glide in Warp mode?',
+      productBenefits: [
+        '0 to 40 km/h in 2.9 seconds with Warp+ mode',
+        'Dashboard with Google Maps, Bluetooth music and theft alerts',
+        'Ather Grid: Free rapid charging at 2,000+ public points'
+      ],
+      specialOffers: 'Complimentary home charger installation worth ₹9,000 on bookings this month.',
+      requiredCTA: 'Book a free test ride at your nearest Ather Experience Centre today via the link in description!',
+      brandGuidelines: 'Always wear a DOT/ISI certified helmet. Shoot in controlled, cinematic urban settings.',
+      contentRestrictions: 'No reckless stunts, drifting in traffic, or speeding without safety gear.'
+    },
+    status: 'active',
+    bannerImage: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=80',
+    applicantsCount: 22,
+    selectedCreatorsCount: 3,
+    createdAt: '2026-11-10'
+  }
+];
+
+export const APPLICATIONS: Application[] = [
+  {
+    id: 'app_1',
+    campaignId: 'camp_boat_nirvana',
+    campaignTitle: 'Nirvana Ion ANC: Silence The Noise in Indian Commutes',
+    brandId: 'brand_boat',
+    brandName: 'boAt Lifestyle',
+    brandLogo: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=120&q=80',
+    creatorId: 'user_creator_1',
+    creatorName: 'Tanya Sharma',
+    creatorAvatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80',
+    creatorFollowers: 485000,
+    creatorCategory: 'Fashion & Lifestyle',
+    creatorLocation: 'Mumbai, Maharashtra',
+    pitch: 'I commute between Bandra and Town regularly on the local train and metro. I will shoot a high-contrast transition showing chaotic station noise vanishing the instant I snap on the Nirvana Ion buds, while keeping my street style aesthetic sharp.',
+    requestedFee: 50000,
+    status: 'accepted',
+    appliedDate: '2026-11-03'
+  },
+  {
+    id: 'app_2',
+    campaignId: 'camp_nykaa_glow',
+    campaignTitle: 'Festive Glass Skin: Serum Infused Foundation Launch',
+    brandId: 'brand_nykaa',
+    brandName: 'Nykaa Beauty',
+    brandLogo: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=120&q=80',
+    creatorId: 'user_creator_1',
+    creatorName: 'Tanya Sharma',
+    creatorAvatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80',
+    creatorFollowers: 485000,
+    creatorCategory: 'Fashion & Lifestyle',
+    creatorLocation: 'Mumbai, Maharashtra',
+    pitch: 'Nykaa is my holy grail! I will create a 60s transition from tired morning skin to effortless luminous festive skin with before/after natural light macro shots.',
+    requestedFee: 45000,
+    status: 'pending',
+    appliedDate: '2026-11-07'
+  },
+  {
+    id: 'app_3',
+    campaignId: 'camp_zomato_gold',
+    campaignTitle: 'Secret Food Trails: Unlock 40% Off with Zomato Gold',
+    brandId: 'brand_zomato',
+    brandName: 'Zomato India',
+    brandLogo: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=120&q=80',
+    creatorId: 'user_creator_3',
+    creatorName: 'Priya Sundaram',
+    creatorAvatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
+    creatorFollowers: 340000,
+    creatorCategory: 'Food & Culinary',
+    creatorLocation: 'Chennai, Tamil Nadu',
+    pitch: 'I will take my audience through 3 hidden gems in Chennai where Zomato Gold knocked ₹1,400 off our group dinner bill. Pure drool-worthy food cinematography!',
+    requestedFee: 35000,
+    status: 'accepted',
+    appliedDate: '2026-11-04'
+  },
+  {
+    id: 'app_4',
+    campaignId: 'camp_cultfit_challenge',
+    campaignTitle: 'Transform in 20 Mins: CultPass Home & Center Challenge',
+    brandId: 'brand_cultfit',
+    brandName: 'Cult.fit',
+    brandLogo: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=120&q=80',
+    creatorId: 'user_creator_4',
+    creatorName: 'Arjun Nair',
+    creatorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80',
+    creatorFollowers: 620000,
+    creatorCategory: 'Fitness',
+    creatorLocation: 'Hyderabad, Telangana',
+    pitch: 'I will showcase a high-intensity 20-minute functional calisthenics routine mixed with Cult Boxing session, proving anyone can get fit with just 20 minutes a day.',
+    requestedFee: 40000,
+    status: 'accepted',
+    appliedDate: '2026-11-09'
+  }
+];
+
+export const INITIAL_COLLABORATIONS: Collaboration[] = [
+  {
+    id: 'collab_boat_tanya',
+    campaignId: 'camp_boat_nirvana',
+    campaignTitle: 'Nirvana Ion ANC: Silence The Noise in Indian Commutes',
+    campaignBanner: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80',
+    brandId: 'brand_boat',
+    brandName: 'boAt Lifestyle',
+    brandLogo: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=120&q=80',
+    creatorId: 'user_creator_1',
+    creatorName: 'Tanya Sharma',
+    creatorAvatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80',
+    deliverables: ['1x Instagram Reel', '2x Instagram Stories'],
+    paymentAmount: 50000,
+    deadline: '2026-11-28',
+    status: 'script_generated',
+    paymentStatus: 'escrowed',
+    script: {
+      id: 'script_collab_1',
+      campaignId: 'camp_boat_nirvana',
+      collaborationId: 'collab_boat_tanya',
+      creatorId: 'user_creator_1',
+      title: 'Mumbai Commute Silence: boAt Nirvana Ion ANC Reel',
+      format: 'Instagram Reel',
+      style: 'Storytelling & Lifestyle',
+      language: 'English with Hindi conversational hooks',
+      hook: 'Ever tried hearing your own thoughts inside a crowded Mumbai metro at 6 PM? Watch this magic.',
+      scenes: [
+        {
+          sceneNumber: 1,
+          visual: 'Fast handheld POV walking onto noisy metro platform. Overwhelming ambient roar of trains, announcements, and chatter.',
+          voiceover: 'POV: You just survived a 9-hour workday and all you want is absolute peace on your way home...',
+          onScreenText: 'Mumbai Rush Hour: 85 dB Chaos 🚨'
+        },
+        {
+          sceneNumber: 2,
+          visual: 'Close-up of Tanya taking out the matte black boAt Nirvana Ion earbuds from the case and popping them into her ear. Finger taps earbud to engage ANC.',
+          voiceover: 'Single tap... and 32dB Hybrid ANC kicks in. Total bliss.',
+          onScreenText: 'TAP ➜ Hybrid ANC On (Silence: 100%) 🔇'
+        },
+        {
+          sceneNumber: 3,
+          visual: 'Audio suddenly cuts to super clean bass track. Slow-motion cinematic shot of Tanya smiling, leaning against the metro glass, enjoying the music while world moves outside.',
+          voiceover: 'The entire noise of the world just vanishes. Crisp highs, deep punchy bass, and 120 hours of battery so I never worry about charging.',
+          onScreenText: '120 Hours Battery • Pure Spatial Sound'
+        },
+        {
+          sceneNumber: 4,
+          visual: 'Holding product box aesthetic shot, looking directly at camera with warm smile.',
+          voiceover: 'Upgrade your daily commute. Use code CREATORBOAT for flat 10% off on boAt-lifestyle.com!',
+          onScreenText: 'Link in Bio • Code: CREATORBOAT (10% OFF)'
+        }
+      ],
+      productPlacement: 'Showcase matte black case texture clearly in Scene 2 and clear earbud fit in Scene 3.',
+      cta: 'Check the link in my bio or swipe up on my story to grab boAt Nirvana Ion with extra 10% off using code CREATORBOAT!',
+      caption: 'Chaos outside, concert inside 🎧✨ Survived the peak hour rush with boAt Nirvana Ion ANC! The 32dB Hybrid noise cancellation is an absolute gamechanger for everyday travel. 120 hours of playback means I charge it once a month! Tap the link in bio & use code CREATORBOAT for 10% off. #boAt #NirvanaIonANC #SilenceTheNoise #CreatorCollab',
+      hashtags: ['#boAtNirvana', '#SoundThatMoves', '#IndianCreators', '#DailyCommuteHacks', '#Ad'],
+      createdAt: '2026-11-10',
+      updatedAt: '2026-11-10',
+      isDraft: true,
+      disclaimer: 'Draft generated with AI Script Writer based strictly on the boAt Nirvana Ion ANC brand brief. Review and tweak before submitting to brand.'
+    },
+    createdAt: '2026-11-04',
+    updatedAt: '2026-11-10'
+  },
+  {
+    id: 'collab_cultfit_arjun',
+    campaignId: 'camp_cultfit_challenge',
+    campaignTitle: 'Transform in 20 Mins: CultPass Home & Center Challenge',
+    campaignBanner: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80',
+    brandId: 'brand_cultfit',
+    brandName: 'Cult.fit',
+    brandLogo: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=120&q=80',
+    creatorId: 'user_creator_4',
+    creatorName: 'Arjun Nair',
+    creatorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80',
+    deliverables: ['1x Instagram Reel', '2x Stories'],
+    paymentAmount: 40000,
+    deadline: '2026-12-05',
+    status: 'content_in_production',
+    paymentStatus: 'escrowed',
+    createdAt: '2026-11-09',
+    updatedAt: '2026-11-11'
+  },
+  {
+    id: 'collab_past_nykaa',
+    campaignId: 'camp_nykaa_glow',
+    campaignTitle: 'Nykaa Festive Lip Oil Launch',
+    campaignBanner: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80',
+    brandId: 'brand_nykaa',
+    brandName: 'Nykaa Beauty',
+    brandLogo: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=120&q=80',
+    creatorId: 'user_creator_1',
+    creatorName: 'Tanya Sharma',
+    creatorAvatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80',
+    deliverables: ['1x Instagram Reel', '1x Story'],
+    paymentAmount: 45000,
+    deadline: '2026-10-25',
+    status: 'payment_completed',
+    paymentStatus: 'paid',
+    transactionId: 'TXN_NYK_88319',
+    paidAt: '2026-10-28',
+    createdAt: '2026-10-10',
+    updatedAt: '2026-10-28'
+  }
+];
+
+export const INITIAL_CALENDAR_TASKS: CalendarTask[] = [
+  {
+    id: 'cal_1',
+    creatorId: 'user_creator_1',
+    collaborationId: 'collab_boat_tanya',
+    campaignTitle: 'Nirvana Ion ANC Launch',
+    brandName: 'boAt Lifestyle',
+    taskType: 'script_writing',
+    title: 'Finalize & Submit AI Script Draft for boAt',
+    dueDate: '2026-11-14',
+    dueTime: '17:00',
+    completed: true,
+    priority: 'high',
+    notes: 'Incorporate Mumbai local train visuals and tap-to-silence moment.'
+  },
+  {
+    id: 'cal_2',
+    creatorId: 'user_creator_1',
+    collaborationId: 'collab_boat_tanya',
+    campaignTitle: 'Nirvana Ion ANC Launch',
+    brandName: 'boAt Lifestyle',
+    taskType: 'content_shooting',
+    title: 'Shoot Metro & Outdoor B-Roll Footage',
+    dueDate: '2026-11-18',
+    dueTime: '11:00',
+    completed: false,
+    priority: 'high',
+    notes: 'Bring ND filters and shoot during daylight commute.'
+  },
+  {
+    id: 'cal_3',
+    creatorId: 'user_creator_1',
+    collaborationId: 'collab_boat_tanya',
+    campaignTitle: 'Nirvana Ion ANC Launch',
+    brandName: 'boAt Lifestyle',
+    taskType: 'video_editing',
+    title: 'Edit 60-sec Reel with Audio Transitions',
+    dueDate: '2026-11-21',
+    dueTime: '18:00',
+    completed: false,
+    priority: 'medium',
+    notes: 'Sync sound cutoff with screen flash effect.'
+  },
+  {
+    id: 'cal_4',
+    creatorId: 'user_creator_1',
+    collaborationId: 'collab_boat_tanya',
+    campaignTitle: 'Nirvana Ion ANC Launch',
+    brandName: 'boAt Lifestyle',
+    taskType: 'content_submission',
+    title: 'Submit Reel Video Link for Brand Review',
+    dueDate: '2026-11-24',
+    dueTime: '16:00',
+    completed: false,
+    priority: 'high'
+  },
+  {
+    id: 'cal_5',
+    creatorId: 'user_creator_1',
+    collaborationId: 'collab_boat_tanya',
+    campaignTitle: 'Nirvana Ion ANC Launch',
+    brandName: 'boAt Lifestyle',
+    taskType: 'final_publishing',
+    title: 'Publish Instagram Reel & Post Story Stickers',
+    dueDate: '2026-11-28',
+    dueTime: '19:30',
+    completed: false,
+    priority: 'high',
+    notes: 'Tag @boat.lifestyle and pin promo code in comments.'
+  },
+  {
+    id: 'cal_6',
+    creatorId: 'user_creator_1',
+    collaborationId: 'collab_boat_tanya',
+    campaignTitle: 'Nirvana Ion ANC Launch',
+    brandName: 'boAt Lifestyle',
+    taskType: 'payment_due',
+    title: 'boAt Milestone Payout Release (₹50,000)',
+    dueDate: '2026-12-02',
+    completed: false,
+    priority: 'medium'
+  },
+  {
+    id: 'cal_7',
+    creatorId: 'user_creator_1',
+    taskType: 'personal',
+    title: 'Record Weekly Wardrobe Stylist YouTube Vlog',
+    dueDate: '2026-11-16',
+    dueTime: '14:00',
+    completed: false,
+    priority: 'medium',
+    notes: 'Focus on winter layering essentials for Mumbai breeze.'
+  }
+];
+
+export const INITIAL_CONVERSATIONS: Conversation[] = [
+  {
+    id: 'conv_boat_tanya',
+    participantId: 'brand_boat',
+    participantName: 'boAt Partnerships Team',
+    participantAvatar: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=120&q=80',
+    participantRole: 'brand',
+    campaignId: 'camp_boat_nirvana',
+    campaignTitle: 'Nirvana Ion ANC',
+    lastMessage: 'Your pitch looks fantastic Tanya! We loved your idea of the Mumbai metro sound cut.',
+    lastMessageTime: '10:45 AM',
+    unreadCount: 1
+  },
+  {
+    id: 'conv_nykaa_tanya',
+    participantId: 'brand_nykaa',
+    participantName: 'Nykaa Creator Desk',
+    participantAvatar: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=120&q=80',
+    participantRole: 'brand',
+    campaignId: 'camp_nykaa_glow',
+    campaignTitle: 'Festive Glass Skin Foundation',
+    lastMessage: 'Hey Tanya, we received your application and will confirm shortlisted creators by Friday.',
+    lastMessageTime: 'Yesterday',
+    unreadCount: 0
+  }
+];
+
+export const INITIAL_MESSAGES: Record<string, ChatMessage[]> = {
+  conv_boat_tanya: [
+    {
+      id: 'm1',
+      conversationId: 'conv_boat_tanya',
+      senderId: 'brand_boat',
+      senderName: 'boAt Partnerships Team',
+      senderRole: 'brand',
+      text: 'Hi Tanya! Welcome to the Nirvana Ion ANC creator cohort. We loved your concept of shooting inside the Mumbai metro.',
+      timestamp: 'Nov 09, 2:30 PM',
+      campaignId: 'camp_boat_nirvana',
+      campaignTitle: 'boAt Nirvana Ion ANC'
+    },
+    {
+      id: 'm2',
+      conversationId: 'conv_boat_tanya',
+      senderId: 'user_creator_1',
+      senderName: 'Tanya Sharma',
+      senderRole: 'creator',
+      text: 'Thanks Vikram! Super excited for this. I have generated the first draft using CreatorBridge AI Script Writer. Can I submit the script here or via the collaboration tracker?',
+      timestamp: 'Nov 09, 3:15 PM'
+    },
+    {
+      id: 'm3',
+      conversationId: 'conv_boat_tanya',
+      senderId: 'brand_boat',
+      senderName: 'boAt Partnerships Team',
+      senderRole: 'brand',
+      text: 'Please submit directly via the Collaboration tracker so our brand manager can officially mark it Approved and unlock the shooting milestone!',
+      timestamp: 'Today, 10:45 AM'
+    }
+  ]
+};
+
+export const INITIAL_TRANSACTIONS: Transaction[] = [
+  {
+    id: 'TXN_NYK_88319',
+    type: 'payout',
+    amount: 45000,
+    status: 'completed',
+    date: '2026-10-28',
+    campaignId: 'camp_nykaa_glow',
+    campaignTitle: 'Nykaa Festive Lip Oil Launch',
+    counterpartyName: 'Nykaa Beauty',
+    counterpartyRole: 'Brand',
+    invoiceNumber: 'INV-2026-CB-1049'
+  },
+  {
+    id: 'TXN_ESC_99014',
+    type: 'escrow_hold',
+    amount: 50000,
+    status: 'processing',
+    date: '2026-11-04',
+    campaignId: 'camp_boat_nirvana',
+    campaignTitle: 'boAt Nirvana Ion ANC Launch',
+    counterpartyName: 'boAt Lifestyle',
+    counterpartyRole: 'Brand Escrow',
+    invoiceNumber: 'INV-2026-CB-1102'
+  },
+  {
+    id: 'TXN_ZOM_77218',
+    type: 'payout',
+    amount: 32000,
+    status: 'completed',
+    date: '2026-09-18',
+    campaignId: 'camp_zomato_gold',
+    campaignTitle: 'Zomato Monsoon Bites Campaign',
+    counterpartyName: 'Zomato India',
+    counterpartyRole: 'Brand',
+    invoiceNumber: 'INV-2026-CB-0892'
+  }
+];
+
+export const INITIAL_NOTIFICATIONS: AppNotification[] = [
+  {
+    id: 'notif_1',
+    userId: 'user_creator_1',
+    title: 'Application Accepted! 🎉',
+    message: 'boAt Lifestyle accepted your application for Nirvana Ion ANC campaign! Check the brief and generate your script.',
+    type: 'application',
+    isRead: false,
+    createdAt: '2 hours ago',
+    linkUrl: '/creator/collaborations'
+  },
+  {
+    id: 'notif_2',
+    userId: 'user_creator_1',
+    title: 'Payment Escrowed 🔒',
+    message: '₹50,000 for boAt Nirvana Ion campaign has been deposited into secure CreatorBridge Escrow.',
+    type: 'payment',
+    isRead: false,
+    createdAt: '1 day ago',
+    linkUrl: '/creator/earnings'
+  },
+  {
+    id: 'notif_3',
+    userId: 'user_brand_1',
+    title: 'New Application Received',
+    message: 'Rohan Kulkarni (820K Followers) applied for Nirvana Ion ANC Campaign.',
+    type: 'application',
+    isRead: false,
+    createdAt: '3 hours ago',
+    linkUrl: '/brand/applications'
+  }
+];
