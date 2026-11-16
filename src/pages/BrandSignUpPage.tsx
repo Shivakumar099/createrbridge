@@ -130,7 +130,7 @@ export const BrandSignUpPage: React.FC = () => {
           className="flex items-center gap-1.5 text-xs font-semibold text-[#77758B] hover:text-[#6425E8] transition-colors"
         >
           <ChevronLeft className="w-4 h-4" />
-          <span>Switch Account Type</span>
+          <span>Choose Different Account</span>
         </Link>
       </header>
 

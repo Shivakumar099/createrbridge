@@ -950,6 +950,13 @@
   ],
   "applications": [
     {
+      "id": "app_test_1794827956614",
+      "campaignId": "camp_test_1794827956613",
+      "brandId": "test_brand_1794827956498",
+      "creatorId": "test_creator_1794827956441",
+      "status": "pending"
+    },
+    {
       "id": "app_test_1794826447401",
       "campaignId": "camp_test_1794826447400",
       "brandId": "test_brand_1794826447283",
@@ -1001,6 +1008,13 @@
     }
   ],
   "collaborations": [
+    {
+      "id": "collab_test_1794827956615",
+      "campaignId": "camp_test_1794827956613",
+      "brandId": "test_brand_1794827956498",
+      "creatorId": "test_creator_1794827956441",
+      "status": "brief_received"
+    },
     {
       "id": "collab_test_1794826447403",
       "campaignId": "camp_test_1794826447400",
@@ -1121,6 +1135,11 @@
     }
   ],
   "conversations": [
+    {
+      "id": "conv_test_1794827956616",
+      "participantId": "test_creator_1794827956441",
+      "brandId": "test_brand_1794827956498"
+    },
     {
       "id": "conv_test_1794826447403",
       "participantId": "test_creator_1794826447230",
@@ -1313,6 +1332,13 @@
   "subscriptions": [],
   "payments": [
     {
+      "id": "tx_test_1794827956611",
+      "type": "membership_subscription",
+      "amount": 352.82,
+      "currency": "INR",
+      "paymentId": "pay_idem_1794827956611"
+    },
+    {
       "id": "tx_test_1794826447398",
       "type": "membership_subscription",
       "amount": 352.82,
@@ -1372,6 +1398,12 @@
   "invoices": [],
   "usageRecords": [
     {
+      "id": "usage_test_1794827956612",
+      "userId": "test_creator_1794827956441",
+      "period": "2026-11",
+      "scriptGenerationsCount": 30
+    },
+    {
       "id": "usage_test_1794826447399",
       "userId": "test_creator_1794826447230",
       "period": "2026-11",
@@ -1397,6 +1429,83 @@
     }
   ],
   "sessions": [
+    {
+      "id": "4b4cdf789395e366a26037d4006824250e18537ec2797e876c54aed58588d2a0",
+      "userId": "user_brand_1",
+      "role": "brand",
+      "email": "partnerships@boat-lifestyle.com",
+      "rememberMe": true,
+      "createdAt": 1794827956870,
+      "expiresAt": 1797419956870,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "97c774a05fe612742771db4034a5b5862db62b14c9e1f5ae395a0e550bec5c6f",
+      "userId": "usr_test_b_1794827956765",
+      "role": "brand",
+      "email": "test_brand_1794827956716@example.com",
+      "rememberMe": true,
+      "createdAt": 1794827956868,
+      "expiresAt": 1797419956868,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "400bcfc70d473906fcc139b190b16586df2c251750d1e6bb0b3380943fe78c2f",
+      "userId": "usr_test_c_1794827956714",
+      "role": "creator",
+      "email": "test_creator_1794827956663@example.com",
+      "rememberMe": true,
+      "createdAt": 1794827956816,
+      "expiresAt": 1797419956816,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "9855aca31a11ccdaacecb7cbc7969ac2ec2db1becaa23b9e8d386547c0e9f65f",
+      "userId": "usr_test_b_1794827956765",
+      "role": "brand",
+      "email": "test_brand_1794827956716@example.com",
+      "rememberMe": true,
+      "createdAt": 1794827956766,
+      "expiresAt": 1797419956766,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "3ec2197b795a935dcab552ac1e17128fc891c5582ea0d07ac75e717c5ad0ea54",
+      "userId": "usr_test_c_1794827956714",
+      "role": "creator",
+      "email": "test_creator_1794827956663@example.com",
+      "rememberMe": true,
+      "createdAt": 1794827956715,
+      "expiresAt": 1797419956715,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "06751e04b1b4c31749492e2b932bfce0c277f1e32b5041e0b60e3cd3b8240285",
+      "userId": "test_brand_1794827956498",
+      "role": "brand",
+      "email": "apex_1794827956498@example.com",
+      "rememberMe": false,
+      "createdAt": 1794827956603,
+      "expiresAt": 1794914356603,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "744f5a7efec4e7ba63316153eec535e508e3ffa02fae8f79f7cf7100f6d4b2ad",
+      "userId": "test_creator_1794827956441",
+      "role": "creator",
+      "email": "priya_1794827956441@example.com",
+      "rememberMe": false,
+      "createdAt": 1794827956602,
+      "expiresAt": 1794914356602,
+      "ip": "unknown",
+      "userAgent": ""
+    },
     {
       "id": "6fd9c46c491dd6fe2295600fae4e1704b262f0b9bbce6cacfe5642e2426d8f21",
       "userId": "user_brand_1",

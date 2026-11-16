@@ -5,7 +5,7 @@ import { X, Building2, Sparkles, Check, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 export const AuthModal: React.FC = () => {
-  const { isAuthModalOpen, closeAuthModal, authModalDefaultRole, login, register, switchRole } = useAuth();
+  const { isAuthModalOpen, closeAuthModal, authModalDefaultRole, login, register } = useAuth();
   const navigate = useNavigate();
 
   const [activeTab, setActiveTab] = useState<'login' | 'register'>('login');
@@ -86,16 +86,6 @@ export const AuthModal: React.FC = () => {
     }
   };
 
-  const handleQuickDemo = (role: UserRole) => {
-    switchRole(role);
-    closeAuthModal();
-    if (role === 'brand') {
-      navigate('/brand/dashboard');
-    } else {
-      navigate('/creator/dashboard');
-    }
-  };
-
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-content-primary/40 backdrop-blur-sm animate-fade-in">
       <div className="relative w-full max-w-xl bg-surface-card rounded-card-lg border border-surface-border shadow-2xl overflow-hidden max-h-[92vh] flex flex-col">
@@ -119,32 +109,6 @@ export const AuthModal: React.FC = () => {
 
         {/* Modal Body */}
         <div className="flex-1 overflow-y-auto p-6 space-y-6">
-          {/* Quick Demo Switcher Banner */}
-          <div className="p-4 rounded-xl bg-brand-light/60 border border-brand-soft flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div className="flex items-center gap-2.5">
-              <Sparkles className="w-5 h-5 text-brand-primary flex-shrink-0" />
-              <div className="text-xs sm:text-sm">
-                <span className="font-semibold text-content-primary">Instant Testing:</span> Explore both dashboards with 1-click
-              </div>
-            </div>
-            <div className="flex gap-2 w-full sm:w-auto">
-              <button
-                type="button"
-                onClick={() => handleQuickDemo('brand')}
-                className="flex-1 sm:flex-initial px-3 py-1.5 text-xs font-semibold rounded-lg bg-brand-primary text-white hover:bg-brand-secondary transition-colors"
-              >
-                Demo as Brand
-              </button>
-              <button
-                type="button"
-                onClick={() => handleQuickDemo('creator')}
-                className="flex-1 sm:flex-initial px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-brand-primary text-brand-primary hover:bg-brand-light transition-colors"
-              >
-                Demo as Creator
-              </button>
-            </div>
-          </div>
-
           {/* Role Selection Tabs */}
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-content-muted mb-2">

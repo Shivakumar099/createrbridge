@@ -51,7 +51,7 @@ export const CreatorDashboard: React.FC = () => {
 
   const actualCompletedEarnings = myCollaborations
     .filter(c => c.status === 'payment_completed')
-    .reduce((sum, c) => sum + (c.payout || 0), 0);
+    .reduce((sum, c) => sum + (c.paymentAmount || 0), 0);
   const totalEarnings = isDemoAccount ? 77000 : actualCompletedEarnings;
 
   const earningsTrend = isDemoAccount ? [

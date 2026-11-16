@@ -24,7 +24,7 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ onCreateCampaignClick }) => {
-  const { user, role, isAuthenticated, logout, switchRole } = useAuth();
+  const { user, role, isAuthenticated, logout } = useAuth();
   const { notifications, markAllNotificationsRead, showToast } = useData();
   const location = useLocation();
   const navigate = useNavigate();
@@ -56,16 +56,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onCreateCampaignClick }) => {
     await logout();
     showToast('Signed Out', 'You have been successfully logged out.', 'info');
     navigate('/', { replace: true });
-  };
-
-  const handleSwitchRole = async (targetRole: 'brand' | 'creator') => {
-    await switchRole(targetRole);
-    showToast(
-      'Role Switched',
-      targetRole === 'brand' ? 'Now viewing Brand Control Center' : 'Now viewing Creator Studio',
-      'success'
-    );
-    navigate(targetRole === 'brand' ? '/brand/dashboard' : '/creator/dashboard', { replace: true });
   };
 
   const unreadCount = notifications.filter(n => !n.isRead).length;
@@ -272,17 +262,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onCreateCampaignClick }) => {
               >
                 {isFullscreen ? <Minimize className="w-4 h-4" /> : <Maximize className="w-4 h-4" />}
               </button>
-
-              {/* Role Switcher Pill */}
-              <button
-                type="button"
-                onClick={() => handleSwitchRole(role === 'brand' ? 'creator' : 'brand')}
-                className="hidden xl:inline-flex h-[36px] px-3 rounded-full text-[12px] font-semibold border border-[#6425E8]/30 bg-[#F2ECFF] text-[#6425E8] hover:bg-[#6425E8] hover:text-white transition-all shadow-2xs cursor-pointer items-center gap-1.5"
-                title={`Switch view to ${role === 'brand' ? 'Creator' : 'Brand'}`}
-              >
-                <span>Switch to</span>
-                <span className="font-bold">{role === 'brand' ? 'Creator' : 'Brand'}</span>
-              </button>
             </>
           ) : (
             <>
@@ -328,15 +307,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onCreateCampaignClick }) => {
                       )}
                     </button>
                   </div>
-
-                  <button
-                    type="button"
-                    onClick={() => handleSwitchRole(role === 'brand' ? 'creator' : 'brand')}
-                    className="h-[36px] px-3 rounded-full text-[12px] font-semibold border border-[#6425E8]/30 bg-[#F2ECFF] text-[#6425E8] hover:bg-[#6425E8] hover:text-white transition-all shadow-2xs cursor-pointer flex items-center gap-1.5"
-                  >
-                    <span className="hidden md:inline">Switch to</span>
-                    <span className="font-bold">{role === 'brand' ? 'Creator' : 'Brand'}</span>
-                  </button>
 
                   <Link
                     to={role === 'brand' ? '/brand/dashboard' : '/creator/dashboard'}
@@ -390,22 +360,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onCreateCampaignClick }) => {
           ))}
           {isAuthenticated && (
             <div className="pt-2 border-t border-[#EAE8F2] flex items-center justify-between">
-              <button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  handleSwitchRole(role === 'brand' ? 'creator' : 'brand');
-                }}
-                className="text-[13px] font-bold text-[#6425E8]"
-              >
-                Switch to {role === 'brand' ? 'Creator' : 'Brand'}
-              </button>
+              <span className="text-[12px] font-medium text-[#77758B] capitalize">
+                Signed in as {role}
+              </span>
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   handleLogout();
                 }}
-                className="text-[13px] font-bold text-[#EF4444]"
+                className="text-[13px] font-bold text-[#EF4444] hover:underline"
               >
                 Sign Out
               </button>
