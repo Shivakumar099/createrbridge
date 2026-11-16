@@ -9,6 +9,7 @@
     "server": "node server/index.js",
     "start": "node server/index.js",
     "build": "tsc && vite build",
+    "test": "node server/tests/security-suite.js && node server/test-auth-suite.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },

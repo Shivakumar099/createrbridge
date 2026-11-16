@@ -25,6 +25,8 @@ function runTests() {
 
   const results = [];
   const db = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8'));
+  let registeredCreator = null;
+  let registeredBrand = null;
 
   function pass(testName) {
     console.log(`✅ [PASS] ${testName}`);
@@ -54,6 +56,7 @@ function runTests() {
       createdAt: new Date().toISOString()
     };
     db.users.push(newCreator);
+    registeredCreator = newCreator;
     const { token, session } = createSession(newCreator, true);
     if (session && session.role === 'creator' && token) {
       pass('TEST 1: New user registers as Creator and role is verified as creator');
@@ -83,6 +86,7 @@ function runTests() {
       createdAt: new Date().toISOString()
     };
     db.users.push(newBrand);
+    registeredBrand = newBrand;
     const { token, session } = createSession(newBrand, true);
     if (session && session.role === 'brand' && token) {
       pass('TEST 2: New user registers as Brand and role is verified as brand');
@@ -95,8 +99,8 @@ function runTests() {
 
   // --- TEST 3: Creator Login ---
   try {
-    const creatorUser = db.users.find(u => u.role === 'creator');
-    const isPwValid = verifyPassword('password123', creatorUser.passwordHash);
+    const creatorUser = registeredCreator || db.users.find(u => u.role === 'creator');
+    const isPwValid = verifyPassword('securePassword123', creatorUser.passwordHash);
     const { token, session } = createSession(creatorUser, true);
     if (isPwValid && session.role === 'creator') {
       pass('TEST 3: Creator logs in with valid password and reaches Creator role');
@@ -109,8 +113,8 @@ function runTests() {
 
   // --- TEST 4: Brand Login ---
   try {
-    const brandUser = db.users.find(u => u.role === 'brand');
-    const isPwValid = verifyPassword('password123', brandUser.passwordHash);
+    const brandUser = registeredBrand || db.users.find(u => u.role === 'brand');
+    const isPwValid = verifyPassword('brandPassword123', brandUser.passwordHash);
     const { token, session } = createSession(brandUser, true);
     if (isPwValid && session.role === 'brand') {
       pass('TEST 4: Brand logs in with valid password and reaches Brand role');

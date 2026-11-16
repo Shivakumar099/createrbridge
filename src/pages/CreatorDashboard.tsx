@@ -42,20 +42,32 @@ export const CreatorDashboard: React.FC = () => {
   const [detailsModalOpen, setDetailsModalOpen] = useState(false);
   const [applyInitially, setApplyInitially] = useState(false);
 
-  // Statistics
-  const totalEarnings = 77000;
-  const myCollaborations = collaborations.filter(c => c.creatorId === user?.id || c.creatorId === 'user_creator_1');
+  // Statistics & Real User Isolation
+  const isDemoAccount = user?.id === 'user_creator_1' || user?.email === 'tanya@tanyastyle.com';
+  const myCollaborations = collaborations.filter(c => c.creatorId === user?.id || (isDemoAccount && c.creatorId === 'user_creator_1'));
   const activeCollabsCount = myCollaborations.filter(c => c.status !== 'payment_completed').length;
   const pendingAppsCount = applications.filter(a => a.creatorId === user?.id && a.status === 'pending').length;
   const upcomingDeliveries = calendarTasks.filter(t => !t.completed).length;
 
-  const earningsTrend = [
+  const actualCompletedEarnings = myCollaborations
+    .filter(c => c.status === 'payment_completed')
+    .reduce((sum, c) => sum + (c.payout || 0), 0);
+  const totalEarnings = isDemoAccount ? 77000 : actualCompletedEarnings;
+
+  const earningsTrend = isDemoAccount ? [
     { month: 'Jun', earnings: 18000 },
     { month: 'Jul', earnings: 24000 },
     { month: 'Aug', earnings: 32000 },
     { month: 'Sep', earnings: 42000 },
     { month: 'Oct', earnings: 58000 },
     { month: 'Nov', earnings: 77000 },
+  ] : [
+    { month: 'Jun', earnings: 0 },
+    { month: 'Jul', earnings: 0 },
+    { month: 'Aug', earnings: 0 },
+    { month: 'Sep', earnings: 0 },
+    { month: 'Oct', earnings: 0 },
+    { month: 'Nov', earnings: actualCompletedEarnings },
   ];
 
   const handleApplyNow = (c: Campaign) => {
@@ -237,14 +249,14 @@ export const CreatorDashboard: React.FC = () => {
               </div>
 
               <div className="space-y-2 text-[13px]">
-                <div className="flex items-center gap-2 text-[#16A36A] font-medium">
-                  <CheckCircle2 className="w-4 h-4 flex-shrink-0" /> Instagram & YouTube Analytics Verified
+                <div className="flex items-center gap-2 text-[#77758B] font-medium">
+                  <AlertCircle className="w-4 h-4 flex-shrink-0 text-amber-500" /> Social API Sync (Awaiting OAuth credentials)
                 </div>
                 <div className="flex items-center gap-2 text-[#16A36A] font-medium">
-                  <CheckCircle2 className="w-4 h-4 flex-shrink-0" /> Verified Escrow Bank Account Linked
+                  <CheckCircle2 className="w-4 h-4 flex-shrink-0" /> Creator Profile Active & Ready for Offers
                 </div>
-                <div className="flex items-center gap-2 text-[#F59E0B] font-medium">
-                  <AlertCircle className="w-4 h-4 flex-shrink-0" /> Missing: Add Rate Card for Bundled Reels
+                <div className="flex items-center gap-2 text-[#16A36A] font-medium">
+                  <CheckCircle2 className="w-4 h-4 flex-shrink-0" /> Escrow Payout Bank Account Registered
                 </div>
               </div>
             </div>

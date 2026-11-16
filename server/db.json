@@ -1,139 +1,66 @@
 {
-  "currentUser": {
-    "id": "usr_1794413083166",
-    "name": "shiva",
-    "email": "shivkihsn6@gmail.com",
-    "passwordHash": "1e79621939f6093a22ef39806514cf21:e5197c57e7ba2760af79cb5375c31a12dd4679624473aaffca36a4ae6e75253ad121bfaf375f6f152f660515e299a7d261683cd01dabc8a4864c4dab92b86deb",
-    "phone": "8618783795",
-    "role": "creator",
-    "avatar": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=120&q=80",
-    "location": "Bengaluru, Karnataka",
-    "businessName": "shiva",
-    "profileCompleted": true,
-    "createdAt": "2026-11-11T16:04:43.224Z"
-  },
-  "brandProfiles": [
+  "users": [
     {
-      "id": "brand_glowskin",
-      "businessName": "GlowSkin",
-      "ownerName": "Dr. Rhea Sen",
-      "email": "partnerships@glowskin.in",
-      "phone": "+91 99100 88219",
-      "category": "Beauty & Skincare",
-      "location": "Delhi-NCR",
-      "logo": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=120&q=80",
-      "website": "https://www.glowskin.in",
-      "description": "Dermatologist-formulated clean botanical skincare powered by stable Vitamin C and Korean Centella.",
-      "verified": true,
-      "totalSpend": 890000,
-      "activeCampaignsCount": 2
-    },
-    {
-      "id": "brand_urbanbites",
-      "businessName": "Urban Bites",
-      "ownerName": "Sameer Mehta",
-      "email": "collabs@urbanbites.com",
-      "phone": "+91 98200 44109",
-      "category": "Food & Dining",
-      "location": "Mumbai, Maharashtra",
-      "logo": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=120&q=80",
-      "website": "https://www.urbanbites.com",
-      "description": "Award-winning artisanal cafe in Bandra crafting organic healthy brunch bowls and specialty coffees.",
-      "verified": true,
-      "totalSpend": 620000,
-      "activeCampaignsCount": 3
-    },
-    {
-      "id": "brand_freshhydro",
-      "businessName": "FreshHydro",
-      "ownerName": "Kavita Rao & Team",
-      "email": "partnerships@freshhydro.in",
-      "phone": "+91 98450 11982",
-      "category": "Lifestyle & Wellness",
-      "location": "Bengaluru, Karnataka",
-      "logo": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=120&q=80",
-      "website": "https://www.freshhydro.in",
-      "description": "Pioneering eco-friendly sustainable hydration flask design with borosilicate glass and thermal retention.",
-      "verified": true,
-      "totalSpend": 450000,
-      "activeCampaignsCount": 2
-    },
-    {
-      "id": "brand_boat",
-      "businessName": "boAt Lifestyle",
-      "ownerName": "Aman Gupta & Team",
+      "id": "user_brand_1",
+      "name": "Vikram Sethi",
       "email": "partnerships@boat-lifestyle.com",
+      "passwordHash": "05dbd346b540bc81355393643f95b052:dada1c468f8a4ed6659671d6797542d159b35226f8cd06ecc8712a2e1d58bd984c17589f1fe4b571eccb1fff6799609f91f58a3848c3d6b3dfcff9a92f284dfe",
       "phone": "+91 98201 44512",
-      "category": "Technology & Audio",
+      "role": "brand",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
       "location": "Bengaluru, Karnataka",
-      "logo": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=120&q=80",
-      "website": "https://www.boat-lifestyle.com",
-      "description": "India's leading consumer tech brand delivering premium wireless audio, ANC earphones, and trendy smartwatches.",
-      "verified": true,
-      "totalSpend": 1420000,
-      "activeCampaignsCount": 4
+      "businessName": "boAt Lifestyle",
+      "profileCompleted": true,
+      "membership": null,
+      "createdAt": "2024-01-15",
+      "updatedAt": "2026-11-16T10:09:13.736Z"
     },
     {
-      "id": "brand_nykaa",
-      "businessName": "Nykaa Beauty",
-      "ownerName": "Falguni Nayar & Partnerships",
-      "email": "collabs@nykaa.com",
-      "phone": "+91 98110 33201",
-      "category": "Beauty & Skincare",
+      "id": "user_creator_1",
+      "name": "Tanya Sharma",
+      "email": "tanya@tanyastyle.com",
+      "passwordHash": "d8b36d9cd9693113d360553d0690a761:60ee6108fe027ffe64671e4e8d1272bd4b9232d164bc4baabf5446abcbbf1c8f5c443910f0bfb20b772211d5e9a06393f21bae4a4a48f657030f870229a80d9f",
+      "phone": "+91 99104 22319",
+      "role": "creator",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80",
       "location": "Mumbai, Maharashtra",
-      "logo": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=120&q=80",
-      "website": "https://www.nykaa.com",
-      "description": "India's premier omnichannel beauty and personal care destination empowering beauty creators.",
-      "verified": true,
-      "totalSpend": 2850000,
-      "activeCampaignsCount": 6
+      "businessName": "Tanya Sharma",
+      "profileCompleted": true,
+      "membership": null,
+      "createdAt": "2024-02-10",
+      "updatedAt": "2026-11-16T10:09:13.742Z"
     },
     {
-      "id": "brand_zomato",
-      "businessName": "Zomato India",
-      "ownerName": "Deepinder Goyal & Growth Team",
-      "email": "creator-partnerships@zomato.com",
-      "phone": "+91 97112 55431",
-      "category": "Food & Dining",
-      "location": "Gurugram, Haryana",
-      "logo": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=120&q=80",
-      "website": "https://www.zomato.com",
-      "description": "Connecting foodies with the best dining and fastest delivery experiences across 500+ Indian cities.",
-      "verified": true,
-      "totalSpend": 4200000,
-      "activeCampaignsCount": 8
+      "id": "creator_sneha",
+      "name": "Sneha Verma",
+      "email": "sneha@vermastyle.com",
+      "passwordHash": "dab54b4b2359e927373d48d875463d34:f2ecd52487796086b54c280f6bce02ffd4ce050d4e3e3e87345c9571e761c171b1861dac866eafe5583662fd4579342a5a151253a206b30d30bf1440c6daff96",
+      "phone": "+91 98450 12091",
+      "role": "creator",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
+      "location": "Bengaluru, KA",
+      "profileCompleted": true,
+      "membership": null,
+      "createdAt": "2024-02-12",
+      "updatedAt": "2026-11-16T10:09:13.742Z"
     },
     {
-      "id": "brand_cultfit",
-      "businessName": "Cult.fit",
-      "ownerName": "Mukesh Bansal & Team",
-      "email": "influencers@cult.fit",
-      "phone": "+91 98801 12399",
-      "category": "Fitness & Wellness",
-      "location": "Bengaluru, Karnataka",
-      "logo": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=120&q=80",
-      "website": "https://www.cult.fit",
-      "description": "Transforming fitness through engaging group workouts, holistic nutrition, and athletic gear.",
-      "verified": true,
-      "totalSpend": 1950000,
-      "activeCampaignsCount": 3
-    },
-    {
-      "id": "brand_1794413083224",
-      "businessName": "shiva",
-      "ownerName": "kumar",
+      "id": "usr_1794413083166",
+      "name": "shiva",
       "email": "shivkihsn6@gmail.com",
+      "passwordHash": "1e79621939f6093a22ef39806514cf21:e5197c57e7ba2760af79cb5375c31a12dd4679624473aaffca36a4ae6e75253ad121bfaf375f6f152f660515e299a7d261683cd01dabc8a4864c4dab92b86deb",
       "phone": "8618783795",
-      "category": "Technology & Audio",
+      "role": "creator",
+      "avatar": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=120&q=80",
       "location": "Bengaluru, Karnataka",
-      "logo": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=120&q=80",
-      "description": "Verified brand partnering with authentic Indian creators on CreatorBridge.",
-      "verified": false,
-      "totalSpend": 0,
-      "activeCampaignsCount": 0
+      "businessName": "shiva",
+      "profileCompleted": true,
+      "membership": null,
+      "createdAt": "2026-11-11T16:04:43.224Z",
+      "updatedAt": "2026-11-16T10:09:13.742Z"
     }
   ],
-  "creators": [
+  "creatorProfiles": [
     {
       "id": "creator_sneha",
       "fullName": "Sneha Verma",
@@ -553,6 +480,127 @@
       "portfolio": []
     }
   ],
+  "brandProfiles": [
+    {
+      "id": "brand_glowskin",
+      "businessName": "GlowSkin",
+      "ownerName": "Dr. Rhea Sen",
+      "email": "partnerships@glowskin.in",
+      "phone": "+91 99100 88219",
+      "category": "Beauty & Skincare",
+      "location": "Delhi-NCR",
+      "logo": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=120&q=80",
+      "website": "https://www.glowskin.in",
+      "description": "Dermatologist-formulated clean botanical skincare powered by stable Vitamin C and Korean Centella.",
+      "verified": true,
+      "totalSpend": 890000,
+      "activeCampaignsCount": 2
+    },
+    {
+      "id": "brand_urbanbites",
+      "businessName": "Urban Bites",
+      "ownerName": "Sameer Mehta",
+      "email": "collabs@urbanbites.com",
+      "phone": "+91 98200 44109",
+      "category": "Food & Dining",
+      "location": "Mumbai, Maharashtra",
+      "logo": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=120&q=80",
+      "website": "https://www.urbanbites.com",
+      "description": "Award-winning artisanal cafe in Bandra crafting organic healthy brunch bowls and specialty coffees.",
+      "verified": true,
+      "totalSpend": 620000,
+      "activeCampaignsCount": 3
+    },
+    {
+      "id": "brand_freshhydro",
+      "businessName": "FreshHydro",
+      "ownerName": "Kavita Rao & Team",
+      "email": "partnerships@freshhydro.in",
+      "phone": "+91 98450 11982",
+      "category": "Lifestyle & Wellness",
+      "location": "Bengaluru, Karnataka",
+      "logo": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=120&q=80",
+      "website": "https://www.freshhydro.in",
+      "description": "Pioneering eco-friendly sustainable hydration flask design with borosilicate glass and thermal retention.",
+      "verified": true,
+      "totalSpend": 450000,
+      "activeCampaignsCount": 2
+    },
+    {
+      "id": "brand_boat",
+      "businessName": "boAt Lifestyle",
+      "ownerName": "Aman Gupta & Team",
+      "email": "partnerships@boat-lifestyle.com",
+      "phone": "+91 98201 44512",
+      "category": "Technology & Audio",
+      "location": "Bengaluru, Karnataka",
+      "logo": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=120&q=80",
+      "website": "https://www.boat-lifestyle.com",
+      "description": "India's leading consumer tech brand delivering premium wireless audio, ANC earphones, and trendy smartwatches.",
+      "verified": true,
+      "totalSpend": 1420000,
+      "activeCampaignsCount": 4
+    },
+    {
+      "id": "brand_nykaa",
+      "businessName": "Nykaa Beauty",
+      "ownerName": "Falguni Nayar & Partnerships",
+      "email": "collabs@nykaa.com",
+      "phone": "+91 98110 33201",
+      "category": "Beauty & Skincare",
+      "location": "Mumbai, Maharashtra",
+      "logo": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=120&q=80",
+      "website": "https://www.nykaa.com",
+      "description": "India's premier omnichannel beauty and personal care destination empowering beauty creators.",
+      "verified": true,
+      "totalSpend": 2850000,
+      "activeCampaignsCount": 6
+    },
+    {
+      "id": "brand_zomato",
+      "businessName": "Zomato India",
+      "ownerName": "Deepinder Goyal & Growth Team",
+      "email": "creator-partnerships@zomato.com",
+      "phone": "+91 97112 55431",
+      "category": "Food & Dining",
+      "location": "Gurugram, Haryana",
+      "logo": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=120&q=80",
+      "website": "https://www.zomato.com",
+      "description": "Connecting foodies with the best dining and fastest delivery experiences across 500+ Indian cities.",
+      "verified": true,
+      "totalSpend": 4200000,
+      "activeCampaignsCount": 8
+    },
+    {
+      "id": "brand_cultfit",
+      "businessName": "Cult.fit",
+      "ownerName": "Mukesh Bansal & Team",
+      "email": "influencers@cult.fit",
+      "phone": "+91 98801 12399",
+      "category": "Fitness & Wellness",
+      "location": "Bengaluru, Karnataka",
+      "logo": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=120&q=80",
+      "website": "https://www.cult.fit",
+      "description": "Transforming fitness through engaging group workouts, holistic nutrition, and athletic gear.",
+      "verified": true,
+      "totalSpend": 1950000,
+      "activeCampaignsCount": 3
+    },
+    {
+      "id": "brand_1794413083224",
+      "businessName": "shiva",
+      "ownerName": "kumar",
+      "email": "shivkihsn6@gmail.com",
+      "phone": "8618783795",
+      "category": "Technology & Audio",
+      "location": "Bengaluru, Karnataka",
+      "logo": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=120&q=80",
+      "description": "Verified brand partnering with authentic Indian creators on CreatorBridge.",
+      "verified": false,
+      "totalSpend": 0,
+      "activeCampaignsCount": 0
+    }
+  ],
   "campaigns": [
     {
       "id": "camp_freshhydro",
@@ -902,6 +950,20 @@
   ],
   "applications": [
     {
+      "id": "app_test_1794826447401",
+      "campaignId": "camp_test_1794826447400",
+      "brandId": "test_brand_1794826447283",
+      "creatorId": "test_creator_1794826447230",
+      "status": "pending"
+    },
+    {
+      "id": "app_test_1794826403815",
+      "campaignId": "camp_test_1794826403814",
+      "brandId": "test_brand_1794826403688",
+      "creatorId": "test_creator_1794826403632",
+      "status": "pending"
+    },
+    {
       "id": "app_1",
       "campaignId": "camp_boat_nirvana",
       "campaignTitle": "Nirvana Ion ANC: Silence The Noise in Indian Commutes",
@@ -939,6 +1001,20 @@
     }
   ],
   "collaborations": [
+    {
+      "id": "collab_test_1794826447403",
+      "campaignId": "camp_test_1794826447400",
+      "brandId": "test_brand_1794826447283",
+      "creatorId": "test_creator_1794826447230",
+      "status": "brief_received"
+    },
+    {
+      "id": "collab_test_1794826403815",
+      "campaignId": "camp_test_1794826403814",
+      "brandId": "test_brand_1794826403688",
+      "creatorId": "test_creator_1794826403632",
+      "status": "brief_received"
+    },
     {
       "id": "collab_boat_tanya",
       "campaignId": "camp_boat_nirvana",
@@ -1011,6 +1087,83 @@
       },
       "createdAt": "2026-11-04",
       "updatedAt": "2026-11-10"
+    }
+  ],
+  "messages": [
+    {
+      "id": "m1",
+      "conversationId": "conv_boat_tanya",
+      "senderId": "brand_boat",
+      "senderName": "boAt Partnerships Team",
+      "senderRole": "brand",
+      "text": "Hi Tanya! Welcome to the Nirvana Ion ANC creator cohort. We loved your concept of shooting inside the Mumbai metro.",
+      "timestamp": "Nov 09, 2:30 PM",
+      "campaignId": "camp_boat_nirvana",
+      "campaignTitle": "boAt Nirvana Ion ANC"
+    },
+    {
+      "id": "m2",
+      "conversationId": "conv_boat_tanya",
+      "senderId": "user_creator_1",
+      "senderName": "Tanya Sharma",
+      "senderRole": "creator",
+      "text": "Thanks Vikram! Super excited for this. I have generated the first draft using CreatorBridge AI Script Writer. Can I submit the script here or via the collaboration tracker?",
+      "timestamp": "Nov 09, 3:15 PM"
+    },
+    {
+      "id": "m3",
+      "conversationId": "conv_boat_tanya",
+      "senderId": "brand_boat",
+      "senderName": "boAt Partnerships Team",
+      "senderRole": "brand",
+      "text": "Please submit directly via the Collaboration tracker so our brand manager can officially mark it Approved and unlock the shooting milestone!",
+      "timestamp": "Today, 10:45 AM"
+    }
+  ],
+  "conversations": [
+    {
+      "id": "conv_test_1794826447403",
+      "participantId": "test_creator_1794826447230",
+      "brandId": "test_brand_1794826447283"
+    },
+    {
+      "id": "conv_test_1794826403818",
+      "participantId": "test_creator_1794826403632",
+      "brandId": "test_brand_1794826403688"
+    },
+    {
+      "id": "conv_boat_tanya",
+      "participantId": "brand_boat",
+      "participantName": "boAt Partnerships Team",
+      "participantAvatar": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=120&q=80",
+      "participantRole": "brand",
+      "campaignId": "camp_boat_nirvana",
+      "campaignTitle": "Nirvana Ion ANC",
+      "lastMessage": "Your pitch looks fantastic Tanya! We loved your idea of the Mumbai metro sound cut.",
+      "lastMessageTime": "10:45 AM",
+      "unreadCount": 1
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif_1",
+      "userId": "user_creator_1",
+      "title": "Application Accepted! 🎉",
+      "message": "boAt Lifestyle accepted your application for Nirvana Ion ANC campaign! Check the brief and generate your script.",
+      "type": "application",
+      "isRead": false,
+      "createdAt": "2 hours ago",
+      "linkUrl": "/creator/collaborations"
+    },
+    {
+      "id": "notif_2",
+      "userId": "user_creator_1",
+      "title": "Payment Escrowed 🔒",
+      "message": "₹50,000 for boAt Nirvana Ion campaign has been deposited into secure CreatorBridge Escrow.",
+      "type": "payment",
+      "isRead": false,
+      "createdAt": "1 day ago",
+      "linkUrl": "/creator/earnings"
     }
   ],
   "calendarTasks": [
@@ -1107,154 +1260,7 @@
       "notes": "Focus on winter layering essentials for Mumbai breeze."
     }
   ],
-  "conversations": [
-    {
-      "id": "conv_boat_tanya",
-      "participantId": "brand_boat",
-      "participantName": "boAt Partnerships Team",
-      "participantAvatar": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=120&q=80",
-      "participantRole": "brand",
-      "campaignId": "camp_boat_nirvana",
-      "campaignTitle": "Nirvana Ion ANC",
-      "lastMessage": "Your pitch looks fantastic Tanya! We loved your idea of the Mumbai metro sound cut.",
-      "lastMessageTime": "10:45 AM",
-      "unreadCount": 1
-    }
-  ],
-  "messages": {
-    "conv_boat_tanya": [
-      {
-        "id": "m1",
-        "conversationId": "conv_boat_tanya",
-        "senderId": "brand_boat",
-        "senderName": "boAt Partnerships Team",
-        "senderRole": "brand",
-        "text": "Hi Tanya! Welcome to the Nirvana Ion ANC creator cohort. We loved your concept of shooting inside the Mumbai metro.",
-        "timestamp": "Nov 09, 2:30 PM",
-        "campaignId": "camp_boat_nirvana",
-        "campaignTitle": "boAt Nirvana Ion ANC"
-      },
-      {
-        "id": "m2",
-        "conversationId": "conv_boat_tanya",
-        "senderId": "user_creator_1",
-        "senderName": "Tanya Sharma",
-        "senderRole": "creator",
-        "text": "Thanks Vikram! Super excited for this. I have generated the first draft using CreatorBridge AI Script Writer. Can I submit the script here or via the collaboration tracker?",
-        "timestamp": "Nov 09, 3:15 PM"
-      },
-      {
-        "id": "m3",
-        "conversationId": "conv_boat_tanya",
-        "senderId": "brand_boat",
-        "senderName": "boAt Partnerships Team",
-        "senderRole": "brand",
-        "text": "Please submit directly via the Collaboration tracker so our brand manager can officially mark it Approved and unlock the shooting milestone!",
-        "timestamp": "Today, 10:45 AM"
-      }
-    ]
-  },
-  "transactions": [
-    {
-      "id": "TXN_NYK_88319",
-      "type": "payout",
-      "amount": 45000,
-      "status": "completed",
-      "date": "2026-10-28",
-      "campaignId": "camp_nykaa_glow",
-      "campaignTitle": "Nykaa Festive Lip Oil Launch",
-      "counterpartyName": "Nykaa Beauty",
-      "counterpartyRole": "Brand",
-      "invoiceNumber": "INV-2026-CB-1049"
-    },
-    {
-      "id": "TXN_ESC_99014",
-      "type": "escrow_hold",
-      "amount": 50000,
-      "status": "processing",
-      "date": "2026-11-04",
-      "campaignId": "camp_boat_nirvana",
-      "campaignTitle": "boAt Nirvana Ion ANC Launch",
-      "counterpartyName": "boAt Lifestyle",
-      "counterpartyRole": "Brand Escrow",
-      "invoiceNumber": "INV-2026-CB-1102"
-    }
-  ],
-  "notifications": [
-    {
-      "id": "notif_1",
-      "userId": "user_creator_1",
-      "title": "Application Accepted! 🎉",
-      "message": "boAt Lifestyle accepted your application for Nirvana Ion ANC campaign! Check the brief and generate your script.",
-      "type": "application",
-      "isRead": false,
-      "createdAt": "2 hours ago",
-      "linkUrl": "/creator/collaborations"
-    },
-    {
-      "id": "notif_2",
-      "userId": "user_creator_1",
-      "title": "Payment Escrowed 🔒",
-      "message": "₹50,000 for boAt Nirvana Ion campaign has been deposited into secure CreatorBridge Escrow.",
-      "type": "payment",
-      "isRead": false,
-      "createdAt": "1 day ago",
-      "linkUrl": "/creator/earnings"
-    }
-  ],
-  "users": [
-    {
-      "id": "user_brand_1",
-      "name": "Vikram Sethi",
-      "email": "partnerships@boat-lifestyle.com",
-      "passwordHash": "05dbd346b540bc81355393643f95b052:dada1c468f8a4ed6659671d6797542d159b35226f8cd06ecc8712a2e1d58bd984c17589f1fe4b571eccb1fff6799609f91f58a3848c3d6b3dfcff9a92f284dfe",
-      "phone": "+91 98201 44512",
-      "role": "brand",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
-      "location": "Bengaluru, Karnataka",
-      "businessName": "boAt Lifestyle",
-      "profileCompleted": true,
-      "createdAt": "2024-01-15"
-    },
-    {
-      "id": "user_creator_1",
-      "name": "Tanya Sharma",
-      "email": "tanya@tanyastyle.com",
-      "passwordHash": "d8b36d9cd9693113d360553d0690a761:60ee6108fe027ffe64671e4e8d1272bd4b9232d164bc4baabf5446abcbbf1c8f5c443910f0bfb20b772211d5e9a06393f21bae4a4a48f657030f870229a80d9f",
-      "phone": "+91 99104 22319",
-      "role": "creator",
-      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80",
-      "location": "Mumbai, Maharashtra",
-      "profileCompleted": true,
-      "createdAt": "2024-02-10"
-    },
-    {
-      "id": "creator_sneha",
-      "name": "Sneha Verma",
-      "email": "sneha@vermastyle.com",
-      "passwordHash": "dab54b4b2359e927373d48d875463d34:f2ecd52487796086b54c280f6bce02ffd4ce050d4e3e3e87345c9571e761c171b1861dac866eafe5583662fd4579342a5a151253a206b30d30bf1440c6daff96",
-      "phone": "+91 98450 12091",
-      "role": "creator",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
-      "location": "Bengaluru, KA",
-      "profileCompleted": true,
-      "createdAt": "2024-02-12"
-    },
-    {
-      "id": "usr_1794413083166",
-      "name": "shiva",
-      "email": "shivkihsn6@gmail.com",
-      "passwordHash": "1e79621939f6093a22ef39806514cf21:e5197c57e7ba2760af79cb5375c31a12dd4679624473aaffca36a4ae6e75253ad121bfaf375f6f152f660515e299a7d261683cd01dabc8a4864c4dab92b86deb",
-      "phone": "8618783795",
-      "role": "creator",
-      "avatar": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=120&q=80",
-      "location": "Bengaluru, Karnataka",
-      "businessName": "shiva",
-      "profileCompleted": true,
-      "createdAt": "2026-11-11T16:04:43.224Z"
-    }
-  ],
-  "subscriptionPlans": [
+  "membershipPlans": [
     {
       "id": "creator_pro",
       "name": "Creator Pro",
@@ -1262,6 +1268,7 @@
       "discounted_price": 299,
       "currency": "INR",
       "discount_percentage": 50,
+      "billing_interval": "monthly",
       "features": [
         "Unlimited campaign applications",
         "AI Script Writer",
@@ -1270,7 +1277,13 @@
         "Creator analytics",
         "Application tracking",
         "Priority support"
-      ]
+      ],
+      "limits": {
+        "aiScriptsMonthly": 30,
+        "unlimitedApplications": true
+      },
+      "active": true,
+      "updatedAt": "2026-11-16T10:09:13.743Z"
     },
     {
       "id": "creator_premium",
@@ -1279,6 +1292,7 @@
       "discounted_price": 599,
       "currency": "INR",
       "discount_percentage": 57.18,
+      "billing_interval": "monthly",
       "features": [
         "Everything in Creator Pro",
         "100 AI scripts per month",
@@ -1287,7 +1301,465 @@
         "Profile promotion credits",
         "Priority support",
         "Exclusive creator resources"
-      ]
+      ],
+      "limits": {
+        "aiScriptsMonthly": 100,
+        "unlimitedApplications": true
+      },
+      "active": true,
+      "updatedAt": "2026-11-16T10:09:13.743Z"
     }
-  ]
+  ],
+  "subscriptions": [],
+  "payments": [
+    {
+      "id": "tx_test_1794826447398",
+      "type": "membership_subscription",
+      "amount": 352.82,
+      "currency": "INR",
+      "paymentId": "pay_idem_1794826447398"
+    },
+    {
+      "id": "tx_test_1794826403812",
+      "type": "membership_subscription",
+      "amount": 352.82,
+      "currency": "INR",
+      "paymentId": "pay_idem_1794826403812"
+    },
+    {
+      "id": "tx_test_1794824334308",
+      "type": "membership_subscription",
+      "amount": 352.82,
+      "currency": "INR",
+      "paymentId": "pay_idem_1794824334308"
+    },
+    {
+      "id": "tx_test_1794824025985",
+      "type": "membership_subscription",
+      "amount": 352.82,
+      "currency": "INR",
+      "paymentId": "pay_idem_1794824025985"
+    },
+    {
+      "id": "TXN_NYK_88319",
+      "type": "payout",
+      "amount": 45000,
+      "currency": "INR",
+      "status": "completed",
+      "date": "2026-10-28",
+      "campaignId": "camp_nykaa_glow",
+      "campaignTitle": "Nykaa Festive Lip Oil Launch",
+      "counterpartyName": "Nykaa Beauty",
+      "counterpartyRole": "Brand",
+      "invoiceNumber": "INV-2026-CB-1049",
+      "createdAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "id": "TXN_ESC_99014",
+      "type": "escrow_hold",
+      "amount": 50000,
+      "currency": "INR",
+      "status": "processing",
+      "date": "2026-11-04",
+      "campaignId": "camp_boat_nirvana",
+      "campaignTitle": "boAt Nirvana Ion ANC Launch",
+      "counterpartyName": "boAt Lifestyle",
+      "counterpartyRole": "Brand Escrow",
+      "invoiceNumber": "INV-2026-CB-1102",
+      "createdAt": "2026-11-04T00:00:00.000Z"
+    }
+  ],
+  "invoices": [],
+  "usageRecords": [
+    {
+      "id": "usage_test_1794826447399",
+      "userId": "test_creator_1794826447230",
+      "period": "2026-11",
+      "scriptGenerationsCount": 30
+    },
+    {
+      "id": "usage_test_1794826403813",
+      "userId": "test_creator_1794826403632",
+      "period": "2026-11",
+      "scriptGenerationsCount": 30
+    },
+    {
+      "id": "usage_test_1794824334308",
+      "userId": "test_creator_1794824334138",
+      "period": "2026-11",
+      "scriptGenerationsCount": 30
+    },
+    {
+      "id": "usage_test_1794824025985",
+      "userId": "test_creator_1794824025820",
+      "period": "2026-11",
+      "scriptGenerationsCount": 30
+    }
+  ],
+  "sessions": [
+    {
+      "id": "6fd9c46c491dd6fe2295600fae4e1704b262f0b9bbce6cacfe5642e2426d8f21",
+      "userId": "user_brand_1",
+      "role": "brand",
+      "email": "partnerships@boat-lifestyle.com",
+      "rememberMe": true,
+      "createdAt": 1794826447663,
+      "expiresAt": 1797418447663,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "e60254144ea322794e772e8ed92bd977ad150cfa9f476fc6c306c35ccbd9b68e",
+      "userId": "usr_test_b_1794826447556",
+      "role": "brand",
+      "email": "test_brand_1794826447506@example.com",
+      "rememberMe": true,
+      "createdAt": 1794826447660,
+      "expiresAt": 1797418447660,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "b022a8c7f9dba1e1ca213a08a3b1eca1c375e0d57b765d3b580ff66893971fd1",
+      "userId": "usr_test_c_1794826447503",
+      "role": "creator",
+      "email": "test_creator_1794826447451@example.com",
+      "rememberMe": true,
+      "createdAt": 1794826447607,
+      "expiresAt": 1797418447607,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "57ce85d9cb0a534ce97a6d3c2d7018e1aa34878088ed70aabf8784e94a8cdcb4",
+      "userId": "usr_test_b_1794826447556",
+      "role": "brand",
+      "email": "test_brand_1794826447506@example.com",
+      "rememberMe": true,
+      "createdAt": 1794826447556,
+      "expiresAt": 1797418447556,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "2cf38bdd239f8584369151462e4f7a0a23ac601e52af31c296d4731d7e19dd5c",
+      "userId": "usr_test_c_1794826447503",
+      "role": "creator",
+      "email": "test_creator_1794826447451@example.com",
+      "rememberMe": true,
+      "createdAt": 1794826447504,
+      "expiresAt": 1797418447504,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "0957d36a11be2852f3dda54f409c66748573d0184febf31ff61fb223e454c5cd",
+      "userId": "test_brand_1794826447283",
+      "role": "brand",
+      "email": "apex_1794826447283@example.com",
+      "rememberMe": false,
+      "createdAt": 1794826447389,
+      "expiresAt": 1794912847389,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "3bb90c915cb57609295aa88fe2727bf0a67947e5370a97f11c97b94147b9d903",
+      "userId": "test_creator_1794826447230",
+      "role": "creator",
+      "email": "priya_1794826447230@example.com",
+      "rememberMe": false,
+      "createdAt": 1794826447388,
+      "expiresAt": 1794912847388,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "3dbb8b42eb3e5c762979b74840f1eb6188bb52c188b6ddfcf867148f7716248a",
+      "userId": "user_brand_1",
+      "role": "brand",
+      "email": "partnerships@boat-lifestyle.com",
+      "rememberMe": true,
+      "createdAt": 1794826404075,
+      "expiresAt": 1797418404075,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "52f2eca8986b3bded7a682fed78f09c5753b97b4a065d56a64978b5ad7f09a64",
+      "userId": "usr_test_b_1794826403971",
+      "role": "brand",
+      "email": "test_brand_1794826403920@example.com",
+      "rememberMe": true,
+      "createdAt": 1794826404073,
+      "expiresAt": 1797418404073,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "c49fa845bba0c93efab23cd008b03d9e8daf6e54e590c2d8af045f3b7efb083e",
+      "userId": "usr_test_c_1794826403917",
+      "role": "creator",
+      "email": "test_creator_1794826403866@example.com",
+      "rememberMe": true,
+      "createdAt": 1794826404022,
+      "expiresAt": 1797418404022,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "f4e5f4ed003059dd25126c074beaf97502c918e5b4e7c1b65686cf6ce5e287ee",
+      "userId": "usr_test_b_1794826403971",
+      "role": "brand",
+      "email": "test_brand_1794826403920@example.com",
+      "rememberMe": true,
+      "createdAt": 1794826403971,
+      "expiresAt": 1797418403971,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "50d6b59503a816e433eac00747783ee580309209ac278af29b724a2cb8481417",
+      "userId": "usr_test_c_1794826403917",
+      "role": "creator",
+      "email": "test_creator_1794826403866@example.com",
+      "rememberMe": true,
+      "createdAt": 1794826403918,
+      "expiresAt": 1797418403918,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "ebde417af874039ba7f260743ac432e409fe12ceebcb6759807ffbbc2ec4a8ac",
+      "userId": "test_brand_1794826403688",
+      "role": "brand",
+      "email": "apex_1794826403688@example.com",
+      "rememberMe": false,
+      "createdAt": 1794826403796,
+      "expiresAt": 1794912803796,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "7485cd03ce9f6b2aa44a00066e1a31d1a9685940651d09846cbe365b16bf0175",
+      "userId": "test_creator_1794826403632",
+      "role": "creator",
+      "email": "priya_1794826403632@example.com",
+      "rememberMe": false,
+      "createdAt": 1794826403795,
+      "expiresAt": 1794912803795,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "e346c057a40cff709d8629bc04d799e9643bb36b246521fbf616cb7d1058e772",
+      "userId": "test_brand_1794824334193",
+      "role": "brand",
+      "email": "apex_1794824334193@example.com",
+      "rememberMe": true,
+      "createdAt": 1794826170884,
+      "expiresAt": 1797418170884,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "ad152619183c5a4557f8e6b180124c433b8d3d5fdb94b097fc813a10890671c5",
+      "userId": "usr_test_b_1794826170776",
+      "role": "brand",
+      "email": "test_brand_1794826170724@example.com",
+      "rememberMe": true,
+      "createdAt": 1794826170881,
+      "expiresAt": 1797418170881,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "24d846bdf09b1eea2bef969d61707d9e826db4a4c9fe1c3c99a098b1dafffc3e",
+      "userId": "usr_test_c_1794826170711",
+      "role": "creator",
+      "email": "test_creator_1794826170608@example.com",
+      "rememberMe": true,
+      "createdAt": 1794826170829,
+      "expiresAt": 1797418170829,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "841dd0085b3973fff248f625f82d07acdd86071c2de586f581474faa108e4845",
+      "userId": "usr_test_b_1794826170776",
+      "role": "brand",
+      "email": "test_brand_1794826170724@example.com",
+      "rememberMe": true,
+      "createdAt": 1794826170776,
+      "expiresAt": 1797418170776,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "3c3ade0d1bab5c69a7b6a23d862655cf597f760d5372c5d32a8178c460d33253",
+      "userId": "usr_test_c_1794826170711",
+      "role": "creator",
+      "email": "test_creator_1794826170608@example.com",
+      "rememberMe": true,
+      "createdAt": 1794826170719,
+      "expiresAt": 1797418170719,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "73918720b147019c9e353b17fa9a1933fc66ae34c7241ea9959f4f6b59404e75",
+      "userId": "test_brand_1794824334193",
+      "role": "brand",
+      "email": "apex_1794824334193@example.com",
+      "rememberMe": true,
+      "createdAt": 1794826090150,
+      "expiresAt": 1797418090150,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "d75df983052b0ba013b6f2a9784275f27dfab2d7ad20d8ef30fc93f5342ffb05",
+      "userId": "test_brand_1794824334193",
+      "role": "brand",
+      "email": "apex_1794824334193@example.com",
+      "rememberMe": true,
+      "createdAt": 1794826090148,
+      "expiresAt": 1797418090148,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "a8ac20cdc4fc3480222bd97c154c70f0299a701fb46da445fdfd4f6660cf98d8",
+      "userId": "test_other_1794824334245",
+      "role": "creator",
+      "email": "rahul_1794824334245@example.com",
+      "rememberMe": true,
+      "createdAt": 1794826090098,
+      "expiresAt": 1797418090098,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "bf6a5bc74ecfb894ed0047e20ca7fec6aa93a3043e24ea62926bdb4603bf52d1",
+      "userId": "usr_test_b_1794826090046",
+      "role": "brand",
+      "email": "test_brand_1794826089998@example.com",
+      "rememberMe": true,
+      "createdAt": 1794826090046,
+      "expiresAt": 1797418090046,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "cbf571d08991dc36fbec9b1fb0f1a1dbd63a3d811b5dc4f3c839528f2dfa62a5",
+      "userId": "usr_test_c_1794826089987",
+      "role": "creator",
+      "email": "test_creator_1794826089935@example.com",
+      "rememberMe": true,
+      "createdAt": 1794826089995,
+      "expiresAt": 1797418089995,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "181f08d2abdb4c6d2d31e6d50f990582512e8351fd7c2de61f263f7e374b9fe5",
+      "userId": "test_brand_1794824334193",
+      "role": "brand",
+      "email": "apex_1794824334193@example.com",
+      "rememberMe": false,
+      "createdAt": 1794824334299,
+      "expiresAt": 1794910734299,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "1c089d30f70da60c6fc6f5026a2334a0242d8df5dd00280d36ebd655d89cc01c",
+      "userId": "test_creator_1794824334138",
+      "role": "creator",
+      "email": "priya_1794824334138@example.com",
+      "rememberMe": false,
+      "createdAt": 1794824334298,
+      "expiresAt": 1794910734298,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "2b3657454b0d3a432e81bd38b2235656816c1fe491150a7319e98db8c6c2806c",
+      "userId": "test_brand_1794824025872",
+      "role": "brand",
+      "email": "apex_1794824025872@example.com",
+      "rememberMe": false,
+      "createdAt": 1794824025977,
+      "expiresAt": 1794910425977,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "64b1185d24096050bac449ebe9bea6304a1d17bd10e0bbfceef8e49e83b398c2",
+      "userId": "test_creator_1794824025820",
+      "role": "creator",
+      "email": "priya_1794824025820@example.com",
+      "rememberMe": false,
+      "createdAt": 1794824025976,
+      "expiresAt": 1794910425976,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "28f1feb2d59c65d4acee36ffa5806c5dc7d5428cfd84a9673ebbf1630fc1fa65",
+      "userId": "user_brand_1",
+      "role": "brand",
+      "email": "partnerships@boat-lifestyle.com",
+      "rememberMe": true,
+      "createdAt": 1794823977002,
+      "expiresAt": 1797415977002,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "e5cc10f1ee826720a749f6a531adf10994a190ab4e6d376c0f838db4d47f8134",
+      "userId": "user_brand_1",
+      "role": "brand",
+      "email": "partnerships@boat-lifestyle.com",
+      "rememberMe": true,
+      "createdAt": 1794823977000,
+      "expiresAt": 1797415977000,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "3d92630b87b6437c99d5d5280f2b29a6fe2513ec78245798d3c5b7bd7f9f2a5a",
+      "userId": "creator_sneha",
+      "role": "creator",
+      "email": "sneha@vermastyle.com",
+      "rememberMe": true,
+      "createdAt": 1794823976939,
+      "expiresAt": 1797415976939,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "5e4e6f15e526602fbbe97eb4b9cc6593e50a40d92ad3c6bb0799efb87c975944",
+      "userId": "usr_test_b_1794823976882",
+      "role": "brand",
+      "email": "test_brand_1794823976829@example.com",
+      "rememberMe": true,
+      "createdAt": 1794823976882,
+      "expiresAt": 1797415976882,
+      "ip": "unknown",
+      "userAgent": ""
+    },
+    {
+      "id": "04f04220412fd69a88df3bddf866ce9fd95e5b832a58ab077577e527ae9ff34c",
+      "userId": "usr_test_c_1794823976809",
+      "role": "creator",
+      "email": "test_creator_1794823976753@example.com",
+      "rememberMe": true,
+      "createdAt": 1794823976823,
+      "expiresAt": 1797415976823,
+      "ip": "unknown",
+      "userAgent": ""
+    }
+  ],
+  "auditLogs": []
 }

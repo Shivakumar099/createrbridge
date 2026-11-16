@@ -280,6 +280,38 @@ export function App() {
               }
             />
             <Route
+              path="/creator/membership/plans"
+              element={
+                <ProtectedRoute allowedRoles={['creator']}>
+                  <CreatorMembershipPage initialTab="plans" />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/creator/membership/checkout"
+              element={
+                <ProtectedRoute allowedRoles={['creator']}>
+                  <CreatorMembershipPage initialTab="checkout" />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/creator/membership/billing"
+              element={
+                <ProtectedRoute allowedRoles={['creator']}>
+                  <CreatorMembershipPage initialTab="billing" />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/creator/membership/manage"
+              element={
+                <ProtectedRoute allowedRoles={['creator']}>
+                  <CreatorMembershipPage initialTab="manage" />
+                </ProtectedRoute>
+              }
+            />
+            <Route
               path="/creator/portfolio"
               element={
                 <ProtectedRoute allowedRoles={['creator']}>
