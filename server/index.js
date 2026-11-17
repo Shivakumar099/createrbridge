@@ -53,18 +53,22 @@ app.use((req, res, next) => {
 // 2. CORS Allowlist
 const allowedOrigins = [
   process.env.FRONTEND_URL,
+  process.env.CLIENT_URL,
+  'https://createrbridge.onrender.com',
+  'https://creatorbridge.onrender.com',
   'http://localhost:5173',
   'http://localhost:3000',
+  'http://localhost:3001',
   'http://127.0.0.1:5173'
 ].filter(Boolean);
 
 app.use(cors({
   origin: function (origin, callback) {
-    if (!origin || allowedOrigins.indexOf(origin) !== -1 || process.env.NODE_ENV !== 'production') {
-      callback(null, true);
-    } else {
-      callback(new Error('CORS blocked origin: ' + origin));
-    }
+    if (!origin) return callback(null, true);
+    if (process.env.NODE_ENV !== 'production') return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1) return callback(null, true);
+    if (origin.endsWith('.onrender.com')) return callback(null, true);
+    callback(new Error('CORS blocked origin: ' + origin));
   },
   credentials: true
 }));
