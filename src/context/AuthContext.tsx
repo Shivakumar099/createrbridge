@@ -28,7 +28,6 @@ interface AuthContextType {
   authModalDefaultRole: UserRole;
   openAuthModal: (defaultRole?: UserRole) => void;
   closeAuthModal: () => void;
-  switchRole: (newRole: UserRole) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -185,22 +184,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
-  const switchRole = async (newRole: UserRole) => {
-    try {
-      const result = await safeApiCall<{ user: User; token?: string }>('/auth/switch-role', {
-        method: 'POST',
-        body: JSON.stringify({ role: newRole })
-      });
-
-      if (result.ok && result.data?.user) {
-        setUser(result.data.user);
-        if (result.data.token) {
-          localStorage.setItem('cb_token', result.data.token);
-        }
-      }
-    } catch (err) {}
-  };
-
   const openAuthModal = (defaultRole: UserRole = 'brand') => {
     setAuthModalDefaultRole(defaultRole);
     setIsAuthModalOpen(true);
@@ -224,8 +207,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         isAuthModalOpen,
         authModalDefaultRole,
         openAuthModal,
-        closeAuthModal,
-        switchRole
+        closeAuthModal
       }}
     >
       {children}

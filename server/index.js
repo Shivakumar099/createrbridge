@@ -327,67 +327,12 @@ app.post('/api/auth/logout', requireAuth, (req, res) => {
 });
 
 /**
- * SECURE Role Switch:
- * - Unauthenticated callers are strictly rejected with 401.
- * - Authenticated users CANNOT impersonate another user's ID or switch into other accounts.
- * - Only modifies the verified authenticated user's own role if permitted.
+ * Direct Role Switching is DISABLED:
+ * Creators and Brands must maintain separate accounts.
  */
-app.post('/api/auth/switch-role', requireAuth, (req, res) => {
-  const { role } = req.body;
-  if (!role || (role !== 'brand' && role !== 'creator')) {
-    return res.status(400).json({ error: 'Valid role is required (brand or creator)' });
-  }
-
-  // Update ONLY the authenticated user's own record
-  const updatedUser = db.collection(COLLECTIONS.USERS).updateOne(
-    { id: req.user.id },
-    { role }
-  );
-
-  // If switched to creator and no profile exists, ensure one is initialized
-  if (role === 'creator') {
-    const existingProfile = db.collection(COLLECTIONS.CREATOR_PROFILES).findOne({ id: req.user.id });
-    if (!existingProfile) {
-      db.collection(COLLECTIONS.CREATOR_PROFILES).insert({
-        id: req.user.id,
-        fullName: req.user.name,
-        email: req.user.email,
-        phone: req.user.phone || '',
-        instagramHandle: `@${req.user.name.toLowerCase().replace(/\s+/g, '')}`,
-        categories: ['Lifestyle'],
-        location: req.user.location || 'India',
-        profilePhoto: req.user.avatar,
-        bio: 'Verified creator on CreatorBridge.',
-        followersCount: 50000,
-        avgViews: 15000,
-        engagementRate: 6.2,
-        rating: 5.0,
-        reviewCount: 0,
-        verified: false,
-        pricing: { reel: 25000, story: 10000, post: 18000, video: 50000 },
-        profileCompletionPct: 80,
-        portfolio: [],
-        createdAt: new Date().toISOString()
-      });
-    }
-  }
-
-  // Refresh active session with updated role
-  const { token } = createSession(updatedUser, true, req.ip, req.headers['user-agent'] || '');
-  setSessionCookie(res, token, true);
-
-  recordAuditLog({
-    userId: req.user.id,
-    action: 'ROLE_SWITCH',
-    resource: 'user',
-    details: { newRole: role },
-    ip: req.ip
-  });
-
-  res.json({
-    success: true,
-    user: sanitizeUser(updatedUser),
-    token
+app.post('/api/auth/switch-role', (req, res) => {
+  return res.status(403).json({
+    error: 'Direct role switching is disabled. Creator and Brand require separate accounts.'
   });
 });
 
