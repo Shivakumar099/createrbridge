@@ -42,7 +42,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onCreateCampaignClick }) => {
 
   const menuItems: NavItem[] = [
     { label: 'Dashboard', path: isBrand ? '/brand/dashboard' : '/creator/dashboard', icon: LayoutDashboard },
-    { label: 'Audience', path: isBrand ? '/brand/discover-creators' : '/creator/discover-campaigns', icon: Users },
+    { label: isBrand ? 'Discover Creators' : 'Discover Campaigns', path: isBrand ? '/brand/discover-creators' : '/creator/discover-campaigns', icon: Users },
     { label: 'Campaigns', path: isBrand ? '/brand/campaigns' : '/creator/discover-campaigns', icon: Megaphone, badge: 'New!', badgeColor: 'bg-[#F2ECFF] text-[#6425E8]' },
     { label: 'Analytics', path: isBrand ? '/brand/analytics' : '/creator/analytics', icon: BarChart3 },
     { label: 'Automation', path: isBrand ? '/brand/collaborations' : '/creator/collaborations', icon: GitPullRequest },

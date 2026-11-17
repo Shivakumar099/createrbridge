@@ -191,12 +191,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onCreateCampaignClick }) => {
         <div className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0">
           {isDashboardRoute ? (
             <>
-              {/* Manage Audience button */}
+              {/* Discover Creators button */}
               <Link
-                to={role === 'brand' ? '/brand/discover-creators' : '/creator/discover-campaigns'}
+                to={role === 'brand' ? '/brand/discover-creators' : '/discover-creators'}
                 className="hidden sm:inline-flex items-center gap-2 h-[40px] px-3.5 rounded-xl border border-[#EAE8F2] bg-white text-[13px] font-semibold text-[#17152F] hover:bg-[#FAFAFC] hover:border-[#D1D5DB] transition-all shadow-xs"
               >
-                <span>Manage Audience</span>
+                <span>Discover Creators</span>
                 <Users className="w-4 h-4 text-[#77758B]" />
               </Link>
 
